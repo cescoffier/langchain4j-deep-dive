@@ -4,19 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.langchain4j</groupId>
-    <artifactId>langchain4j-deep-dive</artifactId>
+    <artifactId>langchain4j-deep-dive-function-calling</artifactId>
     <version>1.0.0</version>
 
     <packaging>pom</packaging>
 
     <modules>
-        <module>0-examples</module>
-        <module>1-chat-models</module>
-        <module>2-ai-services</module>
-        <module>3-quarkus-ai-services</module>
-        <module>4-rag</module>
-        <module>5-function-calling</module>
-        <module>6-guardrails</module>
-        <module>7-images</module>
+
     </modules>
 </project>
