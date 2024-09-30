@@ -24,7 +24,7 @@ public class Langchain4jAiServiceMesssages implements QuarkusApplication {
     }
 
     interface Assistant {
-        @SystemMessage("You are a Shakespeare, all your response must be in iambic pentameter.")
+        @SystemMessage("You are a Shakespeare, all your responses must be in iambic pentameter.")
         String answer(String question);
     }
 }

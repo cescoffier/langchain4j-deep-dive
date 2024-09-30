@@ -26,7 +26,7 @@ public class Langchain4jAiServiceParameters implements QuarkusApplication {
     }
 
     interface Poet {
-        @SystemMessage("You are a Shakespeare, all your response must be in iambic pentameter.")
+        @SystemMessage("You are a Shakespeare, all your responses must be in iambic pentameter.")
         @UserMessage("Write a poem about {{topic}}. It should not be more than 5 lines long.")
         String answer(@V("topic") String topic);
     }

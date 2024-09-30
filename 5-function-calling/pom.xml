@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-
+        <module>1-langchain4-ai-service-tools</module>
+        <module>2-langchain4-ai-service-quarkus-tools</module>
     </modules>
 </project>

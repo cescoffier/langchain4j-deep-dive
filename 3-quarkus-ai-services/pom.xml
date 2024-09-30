@@ -13,5 +13,9 @@
         <module>1-quarkus-ai-service-simple</module>
         <module>2-quarkus-ai-service-scopes</module>
         <module>3-quarkus-ai-service-memory</module>
+        <module>4-quarkus-ai-service-parameters</module>
+        <module>5-quarkus-ai-service-observability</module>
+        <module>6-quarkus-ai-service-auditing</module>
+        <module>7-quarkus-ai-service-fault-tolerance</module>
     </modules>
 </project>
