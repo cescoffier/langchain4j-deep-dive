@@ -1,4 +1,4 @@
-package dev.langchain4j.quarkus.workshop;
+package dev.langchain4j.quarkus.deepdive;
 
 import dev.langchain4j.agent.tool.Tool;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
@@ -8,9 +8,9 @@ import jakarta.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.List;
 
-import static dev.langchain4j.quarkus.workshop.Exceptions.BookingCannotBeCancelledException;
-import static dev.langchain4j.quarkus.workshop.Exceptions.BookingNotFoundException;
-import static dev.langchain4j.quarkus.workshop.Exceptions.CustomerNotFoundException;
+import static dev.langchain4j.quarkus.deepdive.Exceptions.BookingCannotBeCancelledException;
+import static dev.langchain4j.quarkus.deepdive.Exceptions.BookingNotFoundException;
+import static dev.langchain4j.quarkus.deepdive.Exceptions.CustomerNotFoundException;
 
 @ApplicationScoped
 public class BookingRepository implements PanacheRepository<Booking> {

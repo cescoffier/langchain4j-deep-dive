@@ -1,4 +1,4 @@
-package dev.langchain4j.quarkus.workshop;
+package dev.langchain4j.quarkus.deepdive;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;

@@ -1,4 +1,4 @@
-package dev.langchain4j.quarkus.workshop;
+package dev.langchain4j.quarkus.deepdive;
 
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;

@@ -1,4 +1,4 @@
-package dev.langchain4j.quarkus.workshop;
+package dev.langchain4j.quarkus.deepdive;
 
 public class Exceptions {
     public static class CustomerNotFoundException extends RuntimeException {

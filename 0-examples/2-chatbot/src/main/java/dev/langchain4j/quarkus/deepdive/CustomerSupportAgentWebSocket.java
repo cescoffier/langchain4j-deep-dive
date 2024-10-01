@@ -1,4 +1,4 @@
-package dev.langchain4j.quarkus.workshop;
+package dev.langchain4j.quarkus.deepdive;
 
 import io.quarkus.logging.Log;
 import io.quarkus.websockets.next.OnOpen;
