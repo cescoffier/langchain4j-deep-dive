@@ -44,11 +44,11 @@ public class RagRetriever {
 //                .queryTransformer(new CompressingQueryTransformer(chatLanguageModel))
                 .contentAggregator(getContentAggregator(scoringModel))
                 .contentInjector((list, userMessage) -> {
-                    StringBuffer prompt = new StringBuffer(userMessage.singleText());
-                    prompt.append("\nPlease, only use the following information:\n");
+                    var prompt = new StringBuffer(userMessage.singleText());
+                    prompt.append("\n\nPlease, only use the following information:\n\n");
 
                     list.stream()
-                      .map(content -> "- %s\n".formatted(content.textSegment().text()))
+                      .map(content -> "%s\n\n".formatted(content.textSegment().text()))
                       .forEach(prompt::append);
 
                     return new UserMessage(prompt.toString());
