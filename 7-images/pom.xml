@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-
+        <module>1-image-model</module>
+        <module>2-image-model-in-ai-services</module>
     </modules>
 </project>
