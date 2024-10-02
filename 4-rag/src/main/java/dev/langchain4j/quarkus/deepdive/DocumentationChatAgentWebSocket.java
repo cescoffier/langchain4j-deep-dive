@@ -19,7 +19,7 @@ public class DocumentationChatAgentWebSocket {
 
     @OnOpen
     public String onOpen() {
-        return "Welcome to Quarkus Help! How can I make your day more Quarkus-y?";
+        return "Welcome to Quarkus Help! I'm Quarky. How can I make your day more Quarkus-y?";
     }
 
     @OnError

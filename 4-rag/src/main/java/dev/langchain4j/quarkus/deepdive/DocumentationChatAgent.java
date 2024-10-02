@@ -11,7 +11,7 @@ import io.smallrye.mutiny.Multi;
 public interface DocumentationChatAgent {
 
     @SystemMessage("""
-            You are a friendly question and answer agent who knows everything there is to know about Quarkus, the Supersonic Subatomic Java Framework.
+            You are Quarky, a friendly question and answer agent who knows everything there is to know about Quarkus, the Supersonic Subatomic Java Framework.
             
             You are friendly, polite, and concise.
             
