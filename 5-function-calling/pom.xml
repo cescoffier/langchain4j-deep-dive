@@ -10,8 +10,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>1-langchain4-ai-service-tools</module>
-        <module>2-langchain4-ai-service-quarkus-tools</module>
-        <module>3-langchain4-ai-service-search-tools</module>
+        <module>1-function-calling-tools</module>
+        <module>2-function-calling-quarkus-tools</module>
+        <module>3-function-calling-observability</module>
+        <module>4-function-calling-search-tools</module>
     </modules>
 </project>
