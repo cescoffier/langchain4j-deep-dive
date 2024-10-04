@@ -40,7 +40,7 @@ public class Tokens implements QuarkusApplication {
     }
 
     /**
-     * Pricing for GPT-4o - October 4, 2024
+     * Pricing for GPT-4o - As of October 4, 2024
      * - $2.50 / 1M input tokens
      * - $10.00 / 1M output tokens
      */
