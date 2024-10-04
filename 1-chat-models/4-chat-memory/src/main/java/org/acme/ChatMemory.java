@@ -1,12 +1,14 @@
 package org.acme;
 
+import jakarta.inject.Inject;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.inject.Inject;
 
 @QuarkusMain
 public class ChatMemory implements QuarkusApplication {
@@ -30,7 +32,7 @@ public class ChatMemory implements QuarkusApplication {
 
         memory.add(response.content());
 
-        memory.add(new UserMessage("Where do I leave?"));
+        memory.add(new UserMessage("Where do I live?"));
         response = model.generate(memory.messages());
         System.out.println("Answer 2: " + response.content().text());
 

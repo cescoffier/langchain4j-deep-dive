@@ -1,19 +1,15 @@
 package org.acme;
 
-import dev.langchain4j.data.message.ChatMessage;
+import jakarta.inject.Inject;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.output.TokenUsage;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.inject.Inject;
-
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 @QuarkusMain
 public class Tokens implements QuarkusApplication {
@@ -38,22 +34,18 @@ public class Tokens implements QuarkusApplication {
         System.out.println("Input token: " + response.tokenUsage().inputTokenCount());
         System.out.println("Output token: " + response.tokenUsage().outputTokenCount());
         System.out.println("Total token: " + response.tokenUsage().totalTokenCount());
-
-        NumberFormat formatter = new DecimalFormat("#0.000000");
-        System.out.println("Estimation of the price: " + formatter.format(estimatedPrice(response.tokenUsage())) + " USD");
+        System.out.println("Estimation of the price: %.7f USD".formatted(estimatedPrice(response.tokenUsage())));
 
         return 0;
     }
 
-
     /**
-     * Pricing for GPT-40 - 26/09/2024
-     * - $5.00 / 1M input tokens
-     * - $15.00 / 1M output tokens
+     * Pricing for GPT-4o - October 4, 2024
+     * - $2.50 / 1M input tokens
+     * - $10.00 / 1M output tokens
      */
-    private double estimatedPrice(TokenUsage tokenUsage) {
-        return tokenUsage.inputTokenCount() * 5.00 / 1_000_000 +
-                tokenUsage.outputTokenCount() * 15.00 / 1_000_000;
+    private static double estimatedPrice(TokenUsage tokenUsage) {
+        return (tokenUsage.inputTokenCount() * (2.50 / 1_000_000)) +
+          (tokenUsage.outputTokenCount() * (10.00 / 1_000_000));
     }
-
 }
