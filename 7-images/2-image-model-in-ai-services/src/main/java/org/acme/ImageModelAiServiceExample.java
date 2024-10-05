@@ -9,6 +9,8 @@ import io.quarkus.runtime.annotations.QuarkusMain;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.control.ActivateRequestContext;
 import jakarta.inject.Inject;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -29,8 +31,8 @@ public class ImageModelAiServiceExample implements QuarkusApplication {
         var prompt = "Generate a picture of a rabbit going to Devoxx. The rabbit should be wearing a Quarkus tee-shirt.";
         var response = generator.generate(prompt);
         var file = new File("rabbit-at-devoxx.jpg");
-        FileUtils.copyURLToFile(response.url().toURL(), file);
-
+        Files.copy(response.url().toURL().openStream(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        System.out.println("file://" + file.getAbsolutePath());
 
         System.out.println(describer.describe(response));
 
