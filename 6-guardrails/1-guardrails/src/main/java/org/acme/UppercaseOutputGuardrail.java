@@ -9,7 +9,7 @@ public class UppercaseOutputGuardrail implements OutputGuardrail {
 
     @Override
     public OutputGuardrailResult validate(OutputGuardrailParams params) {
-        System.out.println("response is: " + params.responseFromLLM().text() + " / " + params.responseFromLLM().text().toUpperCase());
+        System.out.println("response is: " + params.responseFromLLM().text());
         var message = params.responseFromLLM().text();
         var isAllUppercase = message.chars().filter(Character::isLetter).allMatch(Character::isUpperCase);
         if (isAllUppercase) {

@@ -7,14 +7,12 @@ import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.context.control.ActivateRequestContext;
 import jakarta.inject.Inject;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 
 @QuarkusMain
@@ -44,7 +42,6 @@ public class ImageModelAiServiceExample implements QuarkusApplication {
     public interface ImageGenerator {
 
         Image generate(String userMessage);
-
 
 
     }
