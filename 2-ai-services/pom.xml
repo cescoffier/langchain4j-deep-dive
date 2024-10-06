@@ -10,10 +10,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>1-langchain4-ai-service-simple</module>
-        <module>2-langchain4-ai-service-messages</module>
-        <module>3-langchain4-ai-service-parameters</module>
-        <module>4-langchain4-ai-service-structured-output</module>
-        <module>5-langchain4-ai-service-chat-memory</module>
+        <module>1-langchain4j-ai-service-simple</module>
+        <module>2-langchain4j-ai-service-messages</module>
+        <module>3-langchain4j-ai-service-parameters</module>
+        <module>4-langchain4j-ai-service-structured-output</module>
+        <module>5-langchain4j-ai-service-chat-memory</module>
     </modules>
 </project>

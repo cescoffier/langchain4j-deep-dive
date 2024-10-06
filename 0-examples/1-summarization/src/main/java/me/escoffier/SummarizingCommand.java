@@ -8,14 +8,12 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.concurrent.Callable;
 
 @Command(name = "summarize", mixinStandardHelpOptions = true)
-public class GreetingCommand implements Callable<Integer> {
+public class SummarizingCommand implements Callable<Integer> {
 
     @Parameters(paramLabel = "<url>",
         description = "The URL of the article to summarize")
