@@ -16,7 +16,7 @@ public class MyHttpEndpoint {
 
     @POST
     @Path("/memory")
-    public String shortMemory(@RestQuery int id, String question) {
+    public String test(@RestQuery int id, String question) {
         return assistant.answer(id, question);
     }
 

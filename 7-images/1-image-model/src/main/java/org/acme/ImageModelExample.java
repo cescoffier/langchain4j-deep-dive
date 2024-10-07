@@ -5,9 +5,7 @@ import dev.langchain4j.model.image.ImageModel;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
 import jakarta.inject.Inject;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
 import java.io.IOException;
 
 
