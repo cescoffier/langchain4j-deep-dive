@@ -19,11 +19,10 @@ import dev.langchain4j.model.chat.ChatLanguageModel;
 
 @QuarkusMain
 public class PromptWithQuarkus implements QuarkusApplication {
-
-    PromptA promptA;
-    PromptB promptB;
-    PromptC promptC;
-    ChatLanguageModel model;
+    private final PromptA promptA;
+    private final PromptB promptB;
+    private final PromptC promptC;
+    private final ChatLanguageModel model;
 
     public PromptWithQuarkus(PromptA promptA, PromptB promptB, PromptC promptC, ChatLanguageModel model) {
         this.promptA = promptA;
