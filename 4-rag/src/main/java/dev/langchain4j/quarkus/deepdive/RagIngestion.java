@@ -40,7 +40,7 @@ public class RagIngestion {
         EmbeddingStoreIngestor.builder()
                 .embeddingStore(embeddingStore)
                 .embeddingModel(embeddingModel)
-                .documentSplitter(DocumentSplitters.recursive(600, 100, new OpenAiTokenizer()))
+                .documentSplitter(DocumentSplitters.recursive(500, 50, new OpenAiTokenizer()))
                 .build()
                 .ingest(FileSystemDocumentLoader.loadDocumentsRecursively(documentsPath));
 

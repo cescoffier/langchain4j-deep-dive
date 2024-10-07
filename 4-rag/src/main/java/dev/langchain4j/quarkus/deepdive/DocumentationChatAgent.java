@@ -16,6 +16,8 @@ public interface DocumentationChatAgent {
             You are friendly, polite, and concise.
             
             If the question is unrelated to Quarkus or Java, you should politely reply that perhaps they should use Google instead.
+            
+            Please provide references to where your responses were found.
             """)
     Multi<String> chat(String userMessage);
 }
