@@ -13,7 +13,9 @@ import io.quarkus.runtime.annotations.QuarkusMain;
 import io.quarkus.runtime.QuarkusApplication;
 import jakarta.enterprise.context.control.ActivateRequestContext;
 import io.smallrye.mutiny.Multi;
+
 import java.util.concurrent.CountDownLatch;
+
 import dev.langchain4j.model.chat.ChatLanguageModel;
 
 
@@ -34,15 +36,19 @@ public class PromptWithQuarkus implements QuarkusApplication {
     @Override
     @ActivateRequestContext
     public int run(String... args) {
+        // Use chat model to generate a response
         String answerA1 = model.generate("Say Hello World");
-//        System.out.println("Answer A1: " + answerA1);
-//
+        System.out.println("Answer A1: " + answerA1);
+
+        // Use an AI service to generate a response
 //        String answerA2 = promptA.ask("Say Hello");
 //        System.out.println("Answer A2: " + answerA2);
 
-        String answerB = promptB.ask("Name five words that developers hate to hear most");
-        System.out.println("Answer B: " + answerB);
+        // Use an AI service to generate a response selecting a specific model
+//        String answerB = promptB.ask("Name five words that developers hate to hear most");
+//        System.out.println("Answer B: " + answerB);
 
+        // Streaming demo
 //        Multi<String> answersC = promptC.ask("Write a poem about unicorns and grizzly bears");
 //        CountDownLatch latch = new CountDownLatch(1);
 //        System.out.println("Answer C: ");
