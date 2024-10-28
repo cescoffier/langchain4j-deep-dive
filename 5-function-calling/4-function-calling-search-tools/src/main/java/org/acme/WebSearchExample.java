@@ -1,13 +1,14 @@
 package org.acme;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
 
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.web.search.WebSearchTool;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.ToolBox;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.enterprise.context.ApplicationScoped;
 
 
 @QuarkusMain
@@ -22,13 +23,16 @@ public class WebSearchExample implements QuarkusApplication {
     @Override
     public int run(String... args) {
         String question = "Was there a Java version released in 2024?";
-        String answer = assistant.chatNoTools(question);
-        System.out.println("No tools: " + answer);
+        var answerNoTools = assistant.chatNoTools(question);
+        var answerWithTools = assistant.chat(question);
 
+        System.out.println(question);
+        System.out.println("No tools:");
+        System.out.println(answerNoTools);
 
-        answer = assistant.chat(question);
         System.out.println("-------------------");
-        System.out.println("With tools: " + answer);
+        System.out.println("With tools:");
+        System.out.println(answerWithTools);
 
         return 0;
     }

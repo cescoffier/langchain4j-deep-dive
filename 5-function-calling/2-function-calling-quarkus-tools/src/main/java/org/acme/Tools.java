@@ -1,13 +1,14 @@
 package org.acme;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Singleton;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
 
 import dev.langchain4j.agent.tool.Tool;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.ToolBox;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Singleton;
 
 
 @QuarkusMain
@@ -22,6 +23,7 @@ public class Tools implements QuarkusApplication {
     @Override
     public int run(String... args) {
         String question = "What is the square root of the sum of the numbers of letters in the words \"hello\" and \"world\"?";
+        System.out.println(question);
         String answer = assistant.chat(question);
         System.out.println(answer);
 
@@ -41,19 +43,19 @@ public class Tools implements QuarkusApplication {
 
         @Tool("Calculates the length of a string")
         int stringLength(String s) {
-            System.out.println("Called stringLength() with s='" + s + "'");
+            System.out.println("Called stringLength('%s')".formatted(s));
             return s.length();
         }
 
         @Tool("Calculates the sum of two numbers")
         int add(int a, int b) {
-            System.out.println("Called add() with a=" + a + ", b=" + b);
+            System.out.println("Called add(%d, %d)".formatted(a, b));
             return a + b;
         }
 
         @Tool("Calculates the square root of a number")
         double sqrt(int x) {
-            System.out.println("Called sqrt() with x=" + x);
+            System.out.println("Called sqrt(%d)".formatted(x));
             return Math.sqrt(x);
         }
     }
