@@ -43,10 +43,8 @@ jobs:
           cache: maven
 
       - name: Maven Build
+        env:
+          OPENAI_API_KEY: change-me
         run: |
           ./mvnw -B -T 1C clean verify \
-            -Dquarkus.http.host=0.0.0.0 \
-            -Dquarkus.langchain4j.timeout=5m \
-            -Dquarkus.langchain4j.openai.base-url=http://localhost:11434/v1 \
-            -Dquarkus.langchain4j.openai.chat-model.model-name=llama3.2 \
-            -Dquarkus.langchain4j.openai.image-model.model-name=llava:7b
+            -Dquarkus.http.host=0.0.0.0
