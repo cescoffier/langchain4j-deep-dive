@@ -25,11 +25,13 @@ jobs:
     name: "Build Deep Dive"
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           java-version: ${{ env.JVM_VERSION }}
           distribution: temurin
           cache: maven
+
       - name: Maven Build
-        run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0 -DskipITs=false
+        run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0
