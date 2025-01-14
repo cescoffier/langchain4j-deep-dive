@@ -23,6 +23,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: "Build Deep Dive"
+    services:
+      ollama:
+        image: ollama/ollama
+        ports:
+          - 11434:11434
+        options: --name ollama --rm
     steps:
       - uses: actions/checkout@v4
 
