@@ -3,8 +3,12 @@ package me.escoffier;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+import java.time.Duration;
+
 import jakarta.ws.rs.core.Response.Status;
 
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +16,8 @@ import io.quarkus.bootstrap.classloading.QuarkusClassLoader;
 import io.quarkus.logging.Log;
 import io.quarkus.test.junit.QuarkusTest;
 
+import io.restassured.RestAssured;
+import io.restassured.config.HttpClientConfig;
 import io.restassured.http.ContentType;
 
 @QuarkusTest
@@ -21,6 +27,21 @@ class OCRResourceTests {
 	@BeforeAll
 	static void beforeAll() {
 		enableLoggingOfRequestAndResponseIfValidationFails();
+
+		// Need to increase the rest-assured timeouts
+		var timeout = Duration.ofMinutes(5).toMillis();
+		var reqConfig = RequestConfig.custom()
+			.setConnectTimeout((int) timeout)
+			.setSocketTimeout((int) timeout)
+			.build();
+
+		var httpClientFactory = HttpClientConfig.httpClientConfig()
+			.httpClientFactory(() -> HttpClientBuilder.create()
+				.setDefaultRequestConfig(reqConfig)
+				.build()
+			);
+
+		RestAssured.config = config().httpClient(httpClientFactory);
 	}
 
 	@Test
