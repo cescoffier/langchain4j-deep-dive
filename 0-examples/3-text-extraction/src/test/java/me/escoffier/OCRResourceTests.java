@@ -1,8 +1,7 @@
 package me.escoffier;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.blankOrNullString;
-import static org.hamcrest.Matchers.not;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 import jakarta.ws.rs.core.Response.Status;
 
@@ -13,7 +12,7 @@ import io.quarkus.bootstrap.classloading.QuarkusClassLoader;
 import io.quarkus.logging.Log;
 import io.quarkus.test.junit.QuarkusTest;
 
-import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 
 @QuarkusTest
 class OCRResourceTests {
@@ -21,7 +20,7 @@ class OCRResourceTests {
 
 	@BeforeAll
 	static void beforeAll() {
-		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
+		enableLoggingOfRequestAndResponseIfValidationFails();
 	}
 
 	@Test
@@ -36,6 +35,7 @@ class OCRResourceTests {
 			.formParam("description", "Handwritten notes")
 			.when().post("/ocr").then()
 			.statusCode(Status.OK.getStatusCode())
+			.contentType(ContentType.TEXT)
 			.body(not(blankOrNullString()))
 			.extract().asString();
 
