@@ -34,4 +34,7 @@ jobs:
           cache: maven
 
       - name: Maven Build
-        run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0
+        run: |
+          ./mvnw -B clean verify \
+            -Dquarkus.http.host=0.0.0.0 \
+            -Dquarkus.langchain4j.ollama.timeout=5m
