@@ -10,6 +10,7 @@ import java.time.Duration;
 
 import jakarta.ws.rs.core.Response.Status;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -24,6 +25,9 @@ import io.restassured.http.ContentType;
 class OCRResourceTests {
 	private static final String FILENAME = "handwritten_text.jpg";
 
+	@ConfigProperty(name = "quarkus.langchain4j.openai.timeout")
+	Duration timeout;
+
 	@BeforeAll
 	static void beforeAll() {
 		enableLoggingOfRequestAndResponseIfValidationFails();
@@ -31,12 +35,11 @@ class OCRResourceTests {
 
 	@Test
 	void ocrWorks() {
-		int timeout = (int) Duration.ofMinutes(5).toMillis();
 		var config = config()
 			.httpClient(
 				HttpClientConfig.httpClientConfig()
-				                .setParam("http.connection.timeout", timeout)
-				                .setParam("http.socket.timeout", timeout)
+				                .setParam("http.connection.timeout", (int) timeout.toMillis())
+				                .setParam("http.socket.timeout", (int) timeout.toMillis())
 			);
 
 		var text = given()
