@@ -1,7 +1,6 @@
 package org.acme;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Singleton;
 
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
@@ -38,7 +37,7 @@ public class Tools implements QuarkusApplication {
         String chat(String userMessage);
     }
 
-    @Singleton
+    @ApplicationScoped
     static class Calculator {
 
         @Tool("Calculates the length of a string")

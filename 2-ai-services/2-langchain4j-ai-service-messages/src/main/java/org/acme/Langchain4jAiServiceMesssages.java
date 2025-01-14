@@ -1,13 +1,13 @@
 package org.acme;
 
+import jakarta.inject.Inject;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
 
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.inject.Inject;
-
 
 @QuarkusMain
 public class Langchain4jAiServiceMesssages implements QuarkusApplication {

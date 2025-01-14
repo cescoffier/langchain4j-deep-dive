@@ -1,15 +1,17 @@
 package org.acme;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import dev.langchain4j.data.message.ChatMessage;
-import dev.langchain4j.store.memory.chat.ChatMemoryStore;
+import java.util.Collections;
+import java.util.List;
+
+import jakarta.enterprise.context.ApplicationScoped;
+
 import io.quarkus.logging.Log;
 import io.quarkus.redis.datasource.RedisDataSource;
 import io.quarkus.redis.datasource.value.ValueCommands;
-import jakarta.enterprise.context.ApplicationScoped;
 
-import java.util.Collections;
-import java.util.List;
+import com.fasterxml.jackson.core.type.TypeReference;
+import dev.langchain4j.data.message.ChatMessage;
+import dev.langchain4j.store.memory.chat.ChatMemoryStore;
 
 @ApplicationScoped
 public class RedisMemoryStore implements ChatMemoryStore {
@@ -19,8 +21,7 @@ public class RedisMemoryStore implements ChatMemoryStore {
     private final ValueCommands<String, List<ChatMessage>> valueCommands;
 
     RedisMemoryStore(RedisDataSource redisDataSource) {
-        this.valueCommands = redisDataSource.value(new TypeReference<List<ChatMessage>>() {
-        });
+        this.valueCommands = redisDataSource.value(new TypeReference<>() {});
     }
 
     @Override

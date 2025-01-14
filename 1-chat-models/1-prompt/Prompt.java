@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS dev.langchain4j:langchain4j-open-ai:0.35.0
+//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-alpha1
 
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.model.StreamingResponseHandler;
@@ -17,7 +17,9 @@ class Prompt {
     //      - set your key
     //      - generate an answer based on your input and print to console
     public static void main(String[] args) {
-        ChatLanguageModel model = OpenAiChatModel.withApiKey(System.getenv("OPENAI_API_KEY"));
+        ChatLanguageModel model = OpenAiChatModel.builder()
+          .apiKey(System.getenv("OPENAI_API_KEY"))
+          .build();
         String answer = model.generate("Say Hello World");
         System.out.println("Answer: " + answer);
     }

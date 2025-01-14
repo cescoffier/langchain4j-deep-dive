@@ -4,8 +4,6 @@ import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
 
-import java.util.List;
-
 @RegisterAiService
 @SystemMessage("You are a useful AI assistant expert in NBA.")
 interface Assistant {
@@ -16,7 +14,5 @@ interface Assistant {
     """)
     Entry ask(MyHttpEndpoint.Question question);
 
-
     record Entry(String team, String years) {}
-
 }

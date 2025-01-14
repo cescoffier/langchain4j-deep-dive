@@ -58,15 +58,15 @@ public class RagRetriever {
 
     private QueryRouter getQueryRouter(ChatLanguageModel chatLanguageModel, ContentRetriever embeddingStoreContentRetriever, ContentRetriever webSearchContentRetriever) {
 //      return LanguageModelQueryRouter.builder()
-//          .chatLanguageModel(chatLanguageModel)
-//          .fallbackStrategy(FallbackStrategy.ROUTE_TO_ALL)
-//          .retrieverToDescription(
+//                                     .chatLanguageModel(chatLanguageModel)
+//                                     .fallbackStrategy(FallbackStrategy.ROUTE_TO_ALL)
+//                                     .retrieverToDescription(
 //            Map.of(
 //              embeddingStoreContentRetriever, "Local documents",
 //              webSearchContentRetriever, "Search of quarkus.io"
 //            )
 //          )
-//          .build();
+//                                     .build();
 
       return new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
     }

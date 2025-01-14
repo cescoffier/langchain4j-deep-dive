@@ -1,11 +1,14 @@
 package dev.langchain4j.quarkus.deepdive;
 
+import jakarta.enterprise.context.control.ActivateRequestContext;
+
 import io.quarkus.logging.Log;
 import io.quarkus.websockets.next.OnOpen;
 import io.quarkus.websockets.next.OnTextMessage;
 import io.quarkus.websockets.next.WebSocket;
 
 @WebSocket(path = "/customer-support-agent")
+@ActivateRequestContext
 public class CustomerSupportAgentWebSocket {
 
     private final CustomerSupportAgent customerSupportAgent;

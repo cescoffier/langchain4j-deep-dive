@@ -16,8 +16,8 @@
 
         <compiler-plugin.version>3.13.0</compiler-plugin.version>
 
-        <quarkus.platform.version>3.16.2</quarkus.platform.version>
-        <quarkus-langchain4j.version>0.20.3</quarkus-langchain4j.version>
+        <quarkus.platform.version>3.17.6</quarkus.platform.version>
+        <quarkus-langchain4j.version>0.23.3</quarkus-langchain4j.version>
     </properties>
 
     <dependencyManagement>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embeddings-bge-small-en-q</artifactId>
-            <version>0.35.0</version>
+            <version>1.0.0-alpha1</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>

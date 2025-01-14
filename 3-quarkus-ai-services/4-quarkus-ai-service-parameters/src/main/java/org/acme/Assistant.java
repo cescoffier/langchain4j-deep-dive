@@ -1,17 +1,17 @@
 package org.acme;
 
+import java.util.List;
+
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
-
-import java.util.List;
 
 @RegisterAiService
 @SystemMessage("You are a useful AI assistant expert in NBA.")
 interface Assistant {
 
     @UserMessage("""
-        What are the  {number}th last team in which {player} played?
+        What are the {number}th last team in which {player} played?
         Only return the team names.
     """)
     List<String> ask(int number, String player);

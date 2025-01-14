@@ -1,15 +1,17 @@
 package org.acme;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.inject.Inject;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
 import dev.langchain4j.data.message.ChatMessage;
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatLanguageModel;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.inject.Inject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @QuarkusMain
 public class ManualMemory implements QuarkusApplication {
@@ -36,6 +38,9 @@ public class ManualMemory implements QuarkusApplication {
         System.out.println("Answer 2: " + response.content().text());
 
         var m = new UserMessage("What's my name again?");
+
+        // Notice we didn't add the response or the new message to the memory
+
         response = model.generate(m);
         System.out.println("Answer 3: " + response.content().text());
 

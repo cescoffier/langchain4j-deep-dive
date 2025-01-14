@@ -1,14 +1,14 @@
 package org.acme;
 
-import dev.langchain4j.service.SystemMessage;
-import dev.langchain4j.service.UserMessage;
-import io.quarkiverse.langchain4j.RegisterAiService;
+import java.time.temporal.ChronoUnit;
+
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
 
-import java.time.temporal.ChronoUnit;
-import java.util.List;
+import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.UserMessage;
+import io.quarkiverse.langchain4j.RegisterAiService;
 
 @RegisterAiService
 @SystemMessage("You are a useful AI assistant expert in NBA.")
@@ -23,11 +23,9 @@ interface Assistant {
     @Fallback(fallbackMethod = "fallback")
     Entry ask(MyHttpEndpoint.Question question);
 
-
     record Entry(String team, String years) {}
 
     default Entry fallback(MyHttpEndpoint.Question question) {
         return new Entry("Unknown", "Unknown");
     }
-
 }

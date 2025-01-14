@@ -1,13 +1,12 @@
 package me.escoffier;
 
+import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
 
 @RegisterAiService
 public interface SummarizerService {
-
-
-    @UserMessage("""
+    @SystemMessage("""
           You are an expert content summarizer. 
           You take content in and output a Markdown formatted summary using the format below.
 
@@ -25,13 +24,8 @@ public interface SummarizerService {
           - Do not output warnings or notes—just the requested sections.
           - Do not repeat items in the output sections.
           - Do not start items with the same opening words.
-
-          # INPUT:
-
-          INPUT: 
-          {content}
-            """)
-    String summarize(String content);
+      """)
+    String summarize(@UserMessage String content);
 
 
 }

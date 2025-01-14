@@ -1,10 +1,9 @@
 package org.acme;
 
+import jakarta.enterprise.context.control.ActivateRequestContext;
 
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.enterprise.context.control.ActivateRequestContext;
-
 
 @QuarkusMain
 public class GuardrailApplication implements QuarkusApplication {
@@ -18,8 +17,9 @@ public class GuardrailApplication implements QuarkusApplication {
     @ActivateRequestContext
     @Override
     public int run(String... args) {
-        //System.out.println(assistant.chat("Say Hello world."));
-        System.out.println(assistant.chat("SAY HELLO WORLD"));
+//        System.out.println(assistant.chat("Say Hello world."));
+//        System.out.println(assistant.chat("SAY HELLO WORLD"));
+        System.out.println(assistant.chat("SAY HELLO WORLD IN ALL LOWER CASE"));
         return 0;
     }
 

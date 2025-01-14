@@ -1,18 +1,21 @@
 package org.acme;
 
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
-import dev.langchain4j.data.image.Image;
-import dev.langchain4j.service.UserMessage;
-import io.quarkiverse.langchain4j.RegisterAiService;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
+import dev.langchain4j.data.image.Image;
+import dev.langchain4j.service.UserMessage;
+import io.quarkiverse.langchain4j.ImageUrl;
+import io.quarkiverse.langchain4j.RegisterAiService;
 
 
 @QuarkusMain
@@ -28,11 +31,12 @@ public class ImageModelAiServiceExample implements QuarkusApplication {
     public int run(String... args) throws IOException {
         var prompt = "Generate a picture of a rabbit going to Devoxx. The rabbit should be wearing a Quarkus tee-shirt.";
         var response = generator.generate(prompt);
-        var file = new File("rabbit-at-devoxx.jpg");
-        Files.copy(response.url().toURL().openStream(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        System.out.println("file://" + file.getAbsolutePath());
+        var file = Paths.get("rabbit-at-devoxx.jpg");
 
-        System.out.println(describer.describe(response));
+        Files.copy(response.url().toURL().openStream(), file, StandardCopyOption.REPLACE_EXISTING);
+
+        System.out.println("File: " + file.toAbsolutePath());
+        System.out.println(describer.describe(response.url()));
 
         return 0;
     }
@@ -40,18 +44,13 @@ public class ImageModelAiServiceExample implements QuarkusApplication {
     @RegisterAiService
     @ApplicationScoped
     public interface ImageGenerator {
-
-        Image generate(String userMessage);
-
-
+        Image generate(@UserMessage String userMessage);
     }
 
     @RegisterAiService
     @ApplicationScoped
     public interface ImageDescriber {
-        @UserMessage("""
-                Describe the given message.
-                """)
-        String describe(Image image);
+        @UserMessage("Describe the given image")
+        String describe(@ImageUrl URI url);
     }
 }

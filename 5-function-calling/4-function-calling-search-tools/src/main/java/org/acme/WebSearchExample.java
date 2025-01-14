@@ -27,11 +27,11 @@ public class WebSearchExample implements QuarkusApplication {
         var answerWithTools = assistant.chat(question);
 
         System.out.println(question);
-        System.out.println("No tools:");
+        System.out.println("\nNo tools:");
         System.out.println(answerNoTools);
 
         System.out.println("-------------------");
-        System.out.println("With tools:");
+        System.out.println("\nWith tools:");
         System.out.println(answerWithTools);
 
         return 0;
@@ -47,6 +47,9 @@ public class WebSearchExample implements QuarkusApplication {
         @ToolBox(WebSearchTool.class)
         String chat(String query);
 
-        String chatNoTools(String userMessage);
+        @UserMessage("""
+                Search for information about the user query: {query}, and answer the question.
+                """)
+        String chatNoTools(String query);
     }
 }
