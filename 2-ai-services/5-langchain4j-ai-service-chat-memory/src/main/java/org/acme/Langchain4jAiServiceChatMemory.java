@@ -1,13 +1,14 @@
 package org.acme;
 
+import jakarta.inject.Inject;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
 
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.inject.Inject;
 
 
 @QuarkusMain
@@ -28,12 +29,12 @@ public class Langchain4jAiServiceChatMemory implements QuarkusApplication {
                 .chatMemory(memory)
                 .build();
 
-        System.out.println(assistant.ask(
+        System.out.println("Answer 1: " + assistant.ask(
                 "Hello, my name is Clement and I live in Valence, France. What is your name?"));
 
-        System.out.println(assistant.ask("What's my name?"));
+        System.out.println("Answer 2: " + assistant.ask("What's my name?"));
 
-        System.out.println(assistant.ask("Where do I live?"));
+        System.out.println("Answer 3: " + assistant.ask("Where do I live?"));
         return 0;
     }
 

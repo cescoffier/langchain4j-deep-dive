@@ -1,14 +1,15 @@
 package org.acme;
 
+import jakarta.inject.Inject;
+
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
 
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.V;
-import io.quarkus.runtime.QuarkusApplication;
-import io.quarkus.runtime.annotations.QuarkusMain;
-import jakarta.inject.Inject;
 
 
 @QuarkusMain
@@ -20,7 +21,7 @@ public class Langchain4jAiServiceParameters implements QuarkusApplication {
     @Override
     public int run(String... args) {
         Poet poet = AiServices.create(Poet.class, model);
-        System.out.println(poet.answer("Devoxx"));
+        System.out.println("Poem: " + poet.answer("Devoxx"));
 
         return 0;
     }

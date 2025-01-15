@@ -18,7 +18,7 @@ public class Langchain4jAiServiceMesssages implements QuarkusApplication {
     @Override
     public int run(String... args) {
         Assistant assistant = AiServices.create(Assistant.class, model);
-        System.out.println(assistant.answer("Say Hello World"));
+        System.out.println("Answer: " + assistant.answer("Say Hello World"));
 
         return 0;
     }
