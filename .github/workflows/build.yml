@@ -45,6 +45,4 @@ jobs:
       - name: Maven Build
         env:
           OPENAI_API_KEY: change-me
-        run: |
-          ./mvnw -B -T 1C clean verify \
-            -Dquarkus.http.host=0.0.0.0
+        run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0
