@@ -36,7 +36,7 @@ public class ImageModelAiServiceExample implements QuarkusApplication {
         Files.copy(response.url().toURL().openStream(), file, StandardCopyOption.REPLACE_EXISTING);
 
         System.out.println("File: " + file.toAbsolutePath());
-        System.out.println(describer.describe(response.url()));
+        System.out.println("Image Description: " + describer.describe(response.url()));
 
         return 0;
     }

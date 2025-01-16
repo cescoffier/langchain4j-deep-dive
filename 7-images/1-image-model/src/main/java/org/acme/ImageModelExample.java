@@ -18,7 +18,7 @@ public class ImageModelExample implements QuarkusApplication {
         var prompt = "Generate a picture showing an American (Eric), a Greek (Georgios) and a French (Clement) presenting Langchain4J at Devoxx, " +
                 "with a crowd of attendees behind them. The picture should be in a cartoon style. The three presenters should wear Quarkus tee-shirts";
         var response = model.generate(prompt);
-        System.out.println(response.content().url());
+        System.out.println("Response: " + response.content().url());
 
         return 0;
     }

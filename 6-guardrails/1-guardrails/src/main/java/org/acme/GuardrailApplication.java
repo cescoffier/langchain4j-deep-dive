@@ -19,7 +19,7 @@ public class GuardrailApplication implements QuarkusApplication {
     public int run(String... args) {
 //        System.out.println(assistant.chat("Say Hello world."));
 //        System.out.println(assistant.chat("SAY HELLO WORLD"));
-        System.out.println(assistant.chat("SAY HELLO WORLD IN ALL LOWER CASE"));
+        System.out.println("Answer: " + assistant.chat("SAY HELLO WORLD IN ALL LOWER CASE"));
         return 0;
     }
 
