@@ -45,4 +45,6 @@ jobs:
       - name: Maven Build
         env:
           OPENAI_API_KEY: change-me
+          TAVILY_API_KEY: change-me
+          COHERE_API_KEY: change-me
         run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0
