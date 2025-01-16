@@ -68,7 +68,8 @@ public class RagRetriever {
 //          )
 //                                     .build();
 
-      return new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
+//      return new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
+      return new DefaultQueryRouter(embeddingStoreContentRetriever);
     }
 
     private ContentAggregator getContentAggregator(ScoringModel scoringModel) {

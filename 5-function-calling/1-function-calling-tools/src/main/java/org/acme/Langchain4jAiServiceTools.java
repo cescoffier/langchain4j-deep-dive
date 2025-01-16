@@ -25,14 +25,14 @@ public class Langchain4jAiServiceTools implements QuarkusApplication {
                 .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
                 .build();
         System.out.println("What's the length of 'Hello, world!'?");
-        System.out.println(assistant.answer("What's the length of 'Hello, world!'?"));
+        System.out.println("Answer 1: " + assistant.answer("What's the length of 'Hello, world!'?"));
         System.out.println("-------------------------------------");
         System.out.println("Can you sum 10 and 20?");
-        System.out.println(assistant.answer("Can you sum 10 and 20?"));
+        System.out.println("Answer 2: " + assistant.answer("Can you sum 10 and 20?"));
         System.out.println("-------------------------------------");
         String question = "What is the square root of the sum of the numbers of letters in the words \"hello\" and \"world\"?";
         System.out.println(question);
-        System.out.println(assistant.answer(question));
+        System.out.println("Answer 3: " + assistant.answer(question));
 
         return 0;
     }
