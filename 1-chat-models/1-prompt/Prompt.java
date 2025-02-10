@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-alpha1
+//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-beta1
 
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.model.StreamingResponseHandler;
