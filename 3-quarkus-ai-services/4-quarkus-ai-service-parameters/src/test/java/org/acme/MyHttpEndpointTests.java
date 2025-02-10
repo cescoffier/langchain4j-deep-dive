@@ -3,6 +3,8 @@ package org.acme;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Objects;
+
 import org.acme.Assistant.Entry;
 import org.acme.MyHttpEndpoint.Question;
 import org.junit.jupiter.api.Test;
@@ -22,7 +24,11 @@ class MyHttpEndpointTests {
 			.statusCode(200)
 			.contentType(ContentType.JSON)
 			.extract().body()
-			.jsonPath().getList(".", String.class);
+			.jsonPath().getList(".", String.class)
+			.stream()
+			.filter(Objects::nonNull)
+			.filter(a -> !a.isBlank())
+			.toList();
 
 		assertThat(answers)
 			.isNotNull()

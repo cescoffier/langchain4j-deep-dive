@@ -11,7 +11,6 @@ import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.V;
 
-
 @QuarkusMain
 public class Langchain4jAiServiceStructuredOutput implements QuarkusApplication {
 
@@ -21,6 +20,7 @@ public class Langchain4jAiServiceStructuredOutput implements QuarkusApplication 
     @Override
     public int run(String... args) {
         TriageService triageService = AiServices.create(TriageService.class, model);
+
         System.out.println("Answer 1: " + triageService.triage("It was a great experience!"));
         System.out.println("Answer 2: " + triageService.triage("It was a terrible experience!"));
 
@@ -44,4 +44,5 @@ public class Langchain4jAiServiceStructuredOutput implements QuarkusApplication 
                 """)
         Feedback triage(@V("feedback") String feedback);
     }
+
 }

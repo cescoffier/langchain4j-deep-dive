@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Pull Ollama models
-        run: docker exec ollama bash -c "ollama pull llama3.2 && ollama pull llava:7b && ollama pull snowflake-arctic-embed && ollama ls"
+        run: docker exec ollama bash -c "ollama pull llama3.2 && ollama pull llava:7b && ollama pull snowflake-arctic-embed && ollama pull qwen2.5-coder:latest && ollama ls"
 
       - name: Setup Java
         uses: actions/setup-java@v4

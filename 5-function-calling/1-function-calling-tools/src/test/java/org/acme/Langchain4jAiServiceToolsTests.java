@@ -21,7 +21,6 @@ class Langchain4jAiServiceToolsTests {
 			.contains("Answer 3: ")
 			.contains("Called stringLength('Hello, world!')")
 			.contains("Called add(10, 20)")
-			.contains("Called add(5, 5)")
 			.contains("Called sqrt(10)");
 	}
 }

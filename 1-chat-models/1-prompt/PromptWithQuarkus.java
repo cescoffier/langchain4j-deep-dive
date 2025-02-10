@@ -1,5 +1,5 @@
 //usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.quarkus.platform:quarkus-bom:3.17.7@pom
+//DEPS io.quarkus.platform:quarkus-bom:3.18.2@pom
 //DEPS io.quarkiverse.langchain4j:quarkus-langchain4j-openai:0.23.3
 //JAVAC_OPTIONS -parameters
 //JAVA_OPTIONS -Djava.util.logging.manager=org.jboss.logmanager.LogManager
