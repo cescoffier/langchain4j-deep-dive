@@ -1,6 +1,6 @@
 //usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.quarkus.platform:quarkus-bom:3.18.2@pom
-//DEPS io.quarkiverse.langchain4j:quarkus-langchain4j-openai:0.24.0.CR3
+//DEPS io.quarkus.platform:quarkus-bom:3.18.3@pom
+//DEPS io.quarkiverse.langchain4j:quarkus-langchain4j-openai:0.24.0
 //JAVAC_OPTIONS -parameters
 //JAVA_OPTIONS -Djava.util.logging.manager=org.jboss.logmanager.LogManager
 //FILES application.properties
@@ -37,33 +37,34 @@ public class PromptWithQuarkus implements QuarkusApplication {
     @ActivateRequestContext
     public int run(String... args) {
         // Use chat model to generate a response
-        String answerA1 = model.generate("Say Hello World");
+        String answerA1 = model.chat("Say Hello World");
         System.out.println("Answer A1: " + answerA1);
 
         // Use an AI service to generate a response
-//        String answerA2 = promptA.ask("Say Hello");
-//        System.out.println("Answer A2: " + answerA2);
+        String answerA2 = promptA.ask("Say Hello");
+        System.out.println("Answer A2: " + answerA2);
 
         // Use an AI service to generate a response selecting a specific model
-//        String answerB = promptB.ask("Name five words that developers hate to hear most");
-//        System.out.println("Answer B: " + answerB);
+        String answerB = promptB.ask("Name five words that developers hate to hear most");
+        System.out.println("Answer B: " + answerB);
 
         // Streaming demo
-//        Multi<String> answersC = promptC.ask("Write a poem about unicorns and grizzly bears");
-//        CountDownLatch latch = new CountDownLatch(1);
-//        System.out.println("Answer C: ");
-//        answersC.subscribe().with(answerC -> {
-//            System.out.println("\t" + answerC);
-//        }, f -> {
-//            System.out.println("Whoopsie!");
-//        }, () -> latch.countDown());
-//
-//
-//        try {
-//            latch.await();
-//        } catch (Exception e) {
-//            // ignore me.
-//        }
+        Multi<String> answersC = promptC.ask("Write a poem about unicorns and grizzly bears");
+        CountDownLatch latch = new CountDownLatch(1);
+        System.out.println("Answer C: ");
+        answersC.subscribe().with(answerC -> {
+            System.out.println("\t" + answerC);
+        }, f -> {
+            System.out.println("Whoopsie!");
+        }, () -> latch.countDown());
+
+
+        try {
+            latch.await();
+        } catch (Exception e) {
+            // ignore me.
+        }
+
         return 0;
     }
 

@@ -1,12 +1,8 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-beta1
 
-import dev.langchain4j.data.message.AiMessage;
-import dev.langchain4j.model.StreamingResponseHandler;
 import dev.langchain4j.model.chat.ChatLanguageModel;
-import dev.langchain4j.model.chat.StreamingChatLanguageModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
-import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
 
 class Prompt {
 
@@ -19,8 +15,9 @@ class Prompt {
     public static void main(String[] args) {
         ChatLanguageModel model = OpenAiChatModel.builder()
           .apiKey(System.getenv("OPENAI_API_KEY"))
+          .modelName("gpt-4o")
           .build();
-        String answer = model.generate("Say Hello World");
+        String answer = model.chat("Say Hello World");
         System.out.println("Answer: " + answer);
     }
 

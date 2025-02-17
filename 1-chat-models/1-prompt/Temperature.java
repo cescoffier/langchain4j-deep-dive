@@ -3,12 +3,8 @@
 //DEPS org.slf4j:slf4j-simple:1.7.32
 //RUNTIME_OPTIONS -Dorg.slf4j.simpleLogger.defaultLogLevel=debug
 
-import dev.langchain4j.data.message.AiMessage;
-import dev.langchain4j.model.StreamingResponseHandler;
 import dev.langchain4j.model.chat.ChatLanguageModel;
-import dev.langchain4j.model.chat.StreamingChatLanguageModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
-import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
 import java.time.Duration;
 
 class Temperature {
@@ -26,12 +22,13 @@ class Temperature {
     public static void main(String[] args) {
         ChatLanguageModel model = OpenAiChatModel.builder()
                 .apiKey(System.getenv("OPENAI_API_KEY"))
+                .modelName("gpt-4o")
                 .timeout(Duration.ofSeconds(30))
                 .temperature(0.5)
                 .logRequests(true)
                 .logResponses(true)
                 .build();
-        String answer = model.generate("Name five words that developers hate to hear most");
+        String answer = model.chat("Name five words that developers hate to hear most");
         System.out.println("Answer:\n" + answer);
     }
 
