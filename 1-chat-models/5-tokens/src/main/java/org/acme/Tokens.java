@@ -28,8 +28,8 @@ public class Tokens implements QuarkusApplication {
         memory.add(new UserMessage("Hello, my name is Clement and I live in Valence, France"));
         memory.add(new UserMessage("What is my name?"));
 
-        var response = model.generate(memory.messages());
-        System.out.println("Answer 1: " + response.content().text());
+        var response = model.chat(memory.messages());
+        System.out.println("Answer 1: " + response.aiMessage().text());
 
         System.out.println("Input token: " + response.tokenUsage().inputTokenCount());
         System.out.println("Output token: " + response.tokenUsage().outputTokenCount());

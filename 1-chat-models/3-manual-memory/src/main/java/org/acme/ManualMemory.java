@@ -27,22 +27,22 @@ public class ManualMemory implements QuarkusApplication {
                 new UserMessage("What is my name?")
         ));
 
-        var response = model.generate(memory);
+        var response = model.chat(memory);
 
-        System.out.println("Answer 1: " + response.content().text());
-        memory.add(response.content());
+        System.out.println("Answer 1: " + response.aiMessage().text());
+        memory.add(response.aiMessage());
 
         memory.add(new UserMessage("What's my name again?"));
-        response = model.generate(memory);
+        response = model.chat(memory);
 
-        System.out.println("Answer 2: " + response.content().text());
+        System.out.println("Answer 2: " + response.aiMessage().text());
 
         var m = new UserMessage("What's my name again?");
 
         // Notice we didn't add the response or the new message to the memory
 
-        response = model.generate(m);
-        System.out.println("Answer 3: " + response.content().text());
+        response = model.chat(m);
+        System.out.println("Answer 3: " + response.aiMessage().text());
 
         return 0;
     }

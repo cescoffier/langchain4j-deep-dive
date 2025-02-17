@@ -27,14 +27,14 @@ public class ChatMemory implements QuarkusApplication {
         memory.add(new UserMessage("Hello, my name is Clement and I live in Valence, France"));
         memory.add(new UserMessage("What is my name?"));
 
-        var response = model.generate(memory.messages());
-        System.out.println("Answer 1: " + response.content().text());
+        var response = model.chat(memory.messages());
+        System.out.println("Answer 1: " + response.aiMessage().text());
 
-        memory.add(response.content());
+        memory.add(response.aiMessage());
 
         memory.add(new UserMessage("Where do I live?"));
-        response = model.generate(memory.messages());
-        System.out.println("Answer 2: " + response.content().text());
+        response = model.chat(memory.messages());
+        System.out.println("Answer 2: " + response.aiMessage().text());
 
         return 0;
     }
