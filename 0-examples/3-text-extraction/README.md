@@ -32,4 +32,4 @@ If you'd like to run with a local Ollama instance instead, first you need to ens
 
 Then you can replace step 1 above with `./mvnw clean quarkus:dev -Dquarkus.profile=ollama,dev`
 
-Note, the response you get back in step 8 probably is very different.
+Note, the response you get back in step 8 is probably very different.
