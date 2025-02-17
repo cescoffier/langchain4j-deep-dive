@@ -47,4 +47,4 @@ jobs:
           OPENAI_API_KEY: change-me
           TAVILY_API_KEY: change-me
           COHERE_API_KEY: change-me
-        run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0
+        run: ./mvnw -B -fae clean verify -Dquarkus.http.host=0.0.0.0
