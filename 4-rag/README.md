@@ -12,3 +12,10 @@ You will need the following environment variables to run, depending on which fea
 - `OPENAI_API_KEY` to make calls to OpenAI
 - `TAVILY_API_KEY` to call the `WebSearchEngine`
 - `COHERE_API_KEY` (optional) if you want to do re-ranking
+
+To run the app simply run `./mvnw clean quarkus:dev`, then hit the `w` key in the Quarkus console to launch the application.
+
+## Running with local Ollama instead
+If you'd like to run with a local Ollama instance instead, first you need to ensure a local Ollama instance is running on port `11434` and the `llama3.2` model is pulled.
+
+Then you can replace step 1 above with `./mvnw clean quarkus:dev -Dquarkus.profile=ollama,dev`

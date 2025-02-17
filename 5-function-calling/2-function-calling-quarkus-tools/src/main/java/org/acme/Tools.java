@@ -9,7 +9,6 @@ import dev.langchain4j.agent.tool.Tool;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.ToolBox;
 
-
 @QuarkusMain
 public class Tools implements QuarkusApplication {
 
