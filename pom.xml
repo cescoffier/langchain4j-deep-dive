@@ -17,6 +17,7 @@
         <module>5-function-calling</module>
         <module>6-guardrails</module>
         <module>7-images</module>
+        <module>8-mcp</module>
     </modules>
     <dependencyManagement>
         <dependencies>
