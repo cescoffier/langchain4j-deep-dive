@@ -11,5 +11,8 @@
 
     <modules>
         <module>1-mcp</module>
+        <module>2-mcp-via-configuration</module>
+        <module>3-mcp-with-custom-server/mcp-client</module>
+        <module>3-mcp-with-custom-server/mcp-server</module>
     </modules>
 </project>

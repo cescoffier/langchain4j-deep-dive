@@ -8,7 +8,7 @@ You need to set the `OPENAI_API_KEY` environment variable to the value of your O
 This app also requires the `npm` package manager installed and present on the `$PATH` variable.
 It is assumed that a NPM server can be bootstrapped by executing
 `npm -y exec @modelcontextprotocol/server-filesystem@0.6.2 playground` in the root directory of this project.
-If the command needs to be altered, do that manually in the `Langchain4jMcpExternalServer` class.
+If the command needs to be altered, do that manually in `application.properties`. 
 
 ## Running this app
 1. Run `./mvnw clean quarkus:dev`
