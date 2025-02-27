@@ -39,7 +39,6 @@ jobs:
             ollama pull llama3.2 && \
             ollama pull llava:7b && \
             ollama pull snowflake-arctic-embed && \
-            ollama pull qwen2.5-coder:latest && \
             ollama pull qwen2.5-coder:14b && \
             ollama ls"
 
