@@ -10,7 +10,7 @@ import jakarta.ws.rs.core.MediaType;
 import io.quarkus.logging.Log;
 
 @Path("/alerts")
-public class MyWeatherResource {
+public class WeatherAlertsResource {
 
     @Inject
     AiWeatherService aiWeatherService;
