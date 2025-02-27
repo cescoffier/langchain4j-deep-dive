@@ -2,6 +2,7 @@ name: Build
 
 env:
   JVM_VERSION: '21'
+  NODE_VERSION: '22'
 
 on:
   push:
@@ -41,6 +42,13 @@ jobs:
           java-version: ${{ env.JVM_VERSION }}
           distribution: temurin
           cache: maven
+
+      # Node needed by some of the mcp demos
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
       - name: Maven Build
         env:
