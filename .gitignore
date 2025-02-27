@@ -3,3 +3,4 @@ target/
 **/*.iml
 /.quarkus/
 **/*.DS_STORE
+8-mcp/**/playground/sum.py
