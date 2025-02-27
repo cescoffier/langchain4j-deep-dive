@@ -17,6 +17,6 @@ If the command needs to be altered, do that manually in `application.properties`
 4. When done, hit the `q` key in the Quarkus console
 
 ## Running with local Ollama instead
-If you'd like to run with a local Ollama instance instead, first you need to ensure a local Ollama instance is running on port `11434` and the `qwen2.5-coder` model is pulled.
+If you'd like to run with a local Ollama instance instead, first you need to ensure a local Ollama instance is running on port `11434` and the `qwen2.5-coder:14b` model is pulled.
 
 Then you can replace step 1 above with `./mvnw clean quarkus:dev -Dquarkus.profile=ollama,dev`
