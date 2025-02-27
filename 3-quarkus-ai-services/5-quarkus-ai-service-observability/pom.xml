@@ -57,9 +57,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>io.quarkiverse.micrometer.registry</groupId>
-            <artifactId>quarkus-micrometer-registry-otlp</artifactId>
-            <version>3.2.4</version>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-micrometer-opentelemetry</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
