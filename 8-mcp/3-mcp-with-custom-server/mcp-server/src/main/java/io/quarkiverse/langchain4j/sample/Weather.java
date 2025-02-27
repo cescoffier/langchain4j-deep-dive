@@ -4,20 +4,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.resteasy.reactive.RestPath;
 
-import io.quarkiverse.mcp.server.Tool;
-import io.quarkiverse.mcp.server.ToolArg;
 import io.quarkus.qute.Qute;
 import io.quarkus.rest.client.reactive.Url;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
 
+import io.quarkiverse.mcp.server.Tool;
+import io.quarkiverse.mcp.server.ToolArg;
 
 public class Weather {
-
     @RestClient
     WeatherClient weatherClient;
 
@@ -36,33 +36,39 @@ public class Weather {
     }
 
     String formatForecast(Forecast forecast) {
-        return forecast.properties().periods().stream().map(period -> {
-
-            return Qute.fmt(
-                    """
-                            Temperature: {p.temperature}°{p.temperatureUnit}
-                            Wind: {p.windSpeed} {p.windDirection}
-                            Forecast: {p.detailedForecast}
-                            """,
-                    Map.of("p", period));
-        }).collect(Collectors.joining("\n---\n"));
+        return forecast.properties()
+                .periods()
+                .stream()
+                .map(period ->
+                        Qute.fmt(
+                """
+                        Temperature: {p.temperature}°{p.temperatureUnit}
+                        Wind: {p.windSpeed} {p.windDirection}
+                        Forecast: {p.detailedForecast}
+                        """, Map.of("p", period)
+                        )
+                )
+                .collect(Collectors.joining("\n---\n"));
     }
 
     String formatAlerts(Alerts alerts) {
-        return alerts.features().stream().map(feature -> {
-            return Qute.fmt(
-                    """
-                            Event: {p.event}
-                            Area: {p.areaDesc}
-                            Severity: {p.severity}
-                            Description: {p.description}
-                            Instructions: {p.instruction}
-                            """,
-                    Map.of("p", feature.properties()));
-        }).collect(Collectors.joining("\n---\n"));
+        return alerts.features()
+                .stream()
+                .map(feature ->
+                        Qute.fmt(
+                """
+                        Event: {p.event}
+                        Area: {p.areaDesc}
+                        Severity: {p.severity}
+                        Description: {p.description}
+                        Instructions: {p.instruction}
+                        """, Map.of("p", feature.properties())
+                        )
+                )
+                .collect(Collectors.joining("\n---\n"));
     }
 
-    @RegisterRestClient(baseUri = "https://api.weather.gov")
+    @RegisterRestClient(configKey = "weather-client")
     public interface WeatherClient {
         @GET
         @Path("/alerts/active/area/{state}")

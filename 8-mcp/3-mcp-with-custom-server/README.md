@@ -7,7 +7,7 @@ weather forecast services.
 # Running the sample
 
 Run the sample by starting the mcp server component in the `mcp-server` directory using `mvn quarkus:dev`.
-This will start the server on port 8081. 
+This will start the server on port 8082. 
 
 Then start the client component in the `mcp-client` directory using `mvn quarkus:dev`.
 

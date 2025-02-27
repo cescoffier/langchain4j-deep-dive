@@ -1,12 +1,13 @@
 package io.quarkiverse.langchain4j.sample.chatbot;
 
-import io.quarkus.logging.Log;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+
+import io.quarkus.logging.Log;
 
 @Path("/alerts")
 public class MyWeatherResource {
@@ -16,7 +17,7 @@ public class MyWeatherResource {
 
     @GET
     @Produces(MediaType.TEXT_HTML)
-    public String getWeatherAlertsForUtah(@QueryParam ("state") String state) {
+    public String getWeatherAlerts(@QueryParam("state") String state) {
         if (state == null || state.isEmpty()) {
             throw new IllegalArgumentException("State parameter is required");
         }
