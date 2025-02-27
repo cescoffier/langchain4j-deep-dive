@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <compiler-plugin.version>3.13.0</compiler-plugin.version>
+        <compiler-plugin.version>3.14.0</compiler-plugin.version>
 
         <quarkus.platform.version>3.18.4</quarkus.platform.version>
         <quarkus-langchain4j.version>0.24.0</quarkus-langchain4j.version>
