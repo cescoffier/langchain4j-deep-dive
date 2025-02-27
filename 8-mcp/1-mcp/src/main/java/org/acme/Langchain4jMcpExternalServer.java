@@ -1,5 +1,6 @@
 package org.acme;
 
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
@@ -23,13 +24,14 @@ import dev.langchain4j.service.tool.ToolProvider;
 
 @QuarkusMain
 public class Langchain4jMcpExternalServer implements QuarkusApplication {
+    static final Path PLAYGROUND_DIR = Paths.get("playground").toAbsolutePath();
 
     @Inject
     ChatLanguageModel model;
 
     @Override
     public int run(String... args) {
-        String playgroundDir = Paths.get("playground").toAbsolutePath().toFile().getAbsolutePath();
+        String playgroundDir = PLAYGROUND_DIR.toFile().getAbsolutePath();
 
         McpTransport transport = new StdioMcpTransport.Builder()
                 .environment(Map.of("PATH", System.getenv("PATH")))
