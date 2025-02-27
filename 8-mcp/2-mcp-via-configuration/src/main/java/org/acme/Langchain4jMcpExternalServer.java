@@ -1,25 +1,13 @@
 package org.acme;
 
-import dev.langchain4j.mcp.McpToolProvider;
-import dev.langchain4j.mcp.client.DefaultMcpClient;
-import dev.langchain4j.mcp.client.McpClient;
-import dev.langchain4j.mcp.client.transport.McpTransport;
-import dev.langchain4j.mcp.client.transport.stdio.StdioMcpTransport;
-import dev.langchain4j.service.SystemMessage;
-import dev.langchain4j.service.tool.ToolProvider;
-import io.quarkiverse.langchain4j.RegisterAiService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
 
-import dev.langchain4j.memory.chat.MessageWindowChatMemory;
-import dev.langchain4j.model.chat.ChatLanguageModel;
-import dev.langchain4j.service.AiServices;
-
-import java.util.List;
-
+import dev.langchain4j.service.SystemMessage;
+import io.quarkiverse.langchain4j.RegisterAiService;
 
 @QuarkusMain
 public class Langchain4jMcpExternalServer implements QuarkusApplication {
@@ -29,8 +17,11 @@ public class Langchain4jMcpExternalServer implements QuarkusApplication {
 
     @Override
     public int run(String... args) {
-        String prompt = "Write a python script that takes two numbers as arguments and prints their sum." +
-                        "Save it as 'sum.py'.";
+        String prompt = """
+                Write a python script that takes two numbers as arguments and prints their sum.
+                
+                Save it as 'sum.py'.
+                """;
         String answer = assistant.answer(prompt);
         System.out.println(answer);
         return 0;
