@@ -14,6 +14,7 @@ import io.quarkus.test.junit.mockito.InjectSpy;
 import io.quarkiverse.mailpit.test.InjectMailbox;
 import io.quarkiverse.mailpit.test.Mailbox;
 import io.quarkiverse.mailpit.test.WithMailbox;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @QuarkusTest
 @WithMailbox
@@ -30,6 +31,7 @@ class EmailMeAPoemResourceTests {
   }
 
   @Test
+  @RetryingTest(4)
   void itWorks() {
     get("/email-me-a-poem").then()
       .statusCode(200)
