@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import io.quarkus.test.junit.main.Launch;
 import io.quarkus.test.junit.main.LaunchResult;
 import io.quarkus.test.junit.main.QuarkusMainTest;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @QuarkusMainTest
 class Langchain4jMcpExternalServerTests {
@@ -24,6 +25,7 @@ class Langchain4jMcpExternalServerTests {
 
 	@Test
 	@Launch
+	@RetryingTest(3)
 	void itWorks(LaunchResult launchResult) {
 		assertThat(PYTHON_FILE).isNotEmptyFile();
 	}

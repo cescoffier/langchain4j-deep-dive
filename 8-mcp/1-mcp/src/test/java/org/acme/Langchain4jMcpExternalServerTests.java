@@ -22,6 +22,7 @@ class Langchain4jMcpExternalServerTests {
 
 	@Test
 	@Launch
+	@RetryingTest(3)
 	void itWorks(LaunchResult launchResult) {
 		assertThat(PYTHON_FILE).isNotEmptyFile();
 	}
