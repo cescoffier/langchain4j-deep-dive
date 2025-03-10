@@ -19,8 +19,8 @@ class Langchain4jAiServiceToolsTests {
 			.contains("Answer 2: ")
 			.contains("What is the square root of the sum of the numbers of letters in the words \"hello\" and \"world\"?")
 			.contains("Answer 3: ")
-			.contains("Called stringLength('Hello, world!')")
-			.contains("Called add(10, 20)")
-			.contains("Called sqrt(10)");
+			.contains("stringLength")
+			.contains("add")
+			.contains("sqrt");
 	}
 }

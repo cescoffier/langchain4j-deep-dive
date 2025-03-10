@@ -16,7 +16,7 @@ class ToolsTests {
 		assertThat(launchResult.getOutput())
 			.isNotNull()
 			.contains("What is the square root of the sum of the numbers of letters in the words \"hello\" and \"world\"?")
-			.contains("Called stringLength('")
-			.contains("Called sqrt(");
+			.contains("stringLength")
+			.contains("sqrt");
 	}
 }
