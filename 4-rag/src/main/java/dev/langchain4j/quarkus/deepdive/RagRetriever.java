@@ -1,5 +1,8 @@
 package dev.langchain4j.quarkus.deepdive;
 
+import dev.langchain4j.rag.content.aggregator.ReRankingContentAggregator;
+import dev.langchain4j.rag.query.router.LanguageModelQueryRouter;
+import dev.langchain4j.rag.query.transformer.CompressingQueryTransformer;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 
@@ -17,6 +20,8 @@ import dev.langchain4j.rag.query.router.DefaultQueryRouter;
 import dev.langchain4j.rag.query.router.QueryRouter;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.web.search.WebSearchEngine;
+
+import java.util.Map;
 
 public class RagRetriever {
 
@@ -41,7 +46,7 @@ public class RagRetriever {
 
         return DefaultRetrievalAugmentor.builder()
                 .queryRouter(getQueryRouter(chatLanguageModel, embeddingStoreContentRetriever, webSearchContentRetriever))
-//                .queryTransformer(new CompressingQueryTransformer(chatLanguageModel))
+                .queryTransformer(new CompressingQueryTransformer(chatLanguageModel))
                 .contentAggregator(getContentAggregator(scoringModel))
                 .contentInjector((list, userMessage) -> {
                     var prompt = new StringBuffer(userMessage.singleText());
@@ -59,7 +64,7 @@ public class RagRetriever {
     private QueryRouter getQueryRouter(ChatLanguageModel chatLanguageModel, ContentRetriever embeddingStoreContentRetriever, ContentRetriever webSearchContentRetriever) {
 //      return LanguageModelQueryRouter.builder()
 //                                     .chatLanguageModel(chatLanguageModel)
-//                                     .fallbackStrategy(FallbackStrategy.ROUTE_TO_ALL)
+//                                     .fallbackStrategy(LanguageModelQueryRouter.FallbackStrategy.ROUTE_TO_ALL)
 //                                     .retrieverToDescription(
 //            Map.of(
 //              embeddingStoreContentRetriever, "Local documents",
@@ -68,8 +73,8 @@ public class RagRetriever {
 //          )
 //                                     .build();
 
-//      return new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
-      return new DefaultQueryRouter(embeddingStoreContentRetriever);
+      return new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
+//      return new DefaultQueryRouter(embeddingStoreContentRetriever);
     }
 
     private ContentAggregator getContentAggregator(ScoringModel scoringModel) {
