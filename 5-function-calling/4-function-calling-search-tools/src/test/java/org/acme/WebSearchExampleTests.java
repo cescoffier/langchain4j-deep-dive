@@ -32,13 +32,10 @@ class WebSearchExampleTests {
 	void itWorks(LaunchResult launchResult) {
 		assertThat(launchResult.getOutput())
 			.isNotNull()
-			.contains("Was there a Java version released in 2024?")
+			.contains("Was there a Java version released in 2025?")
 			.contains("No tools:")
 			.contains("With tools:")
-			.contains("Java 22")
-			.contains("Java 23")
-			.contains("March 19, 2024")
-			.contains("September 17, 2024");
+			.contains("Java 24");
 	}
 
 	public static class MockedWebSearchTestProfile implements QuarkusTestProfile {
@@ -59,7 +56,7 @@ class WebSearchExampleTests {
 					WebSearchOrganicResult.from(
 						"Mock Search API",
 						URI.create("https://java.net"),
-						"Java 22 was released on March 19, 2024. Java 23 was released on September 17, 2024",
+						"Java 24 will be released in April 2025",
 						null)
 				)
 			);
