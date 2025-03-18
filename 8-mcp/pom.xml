@@ -14,5 +14,7 @@
         <module>2-mcp-via-configuration</module>
         <module>3-mcp-with-custom-server/mcp-client</module>
         <module>3-mcp-with-custom-server/mcp-server</module>
+        <module>4-quarkus-mcp/1-quarkus-mcp-server</module>
+        <module>4-quarkus-mcp/2-quarkus-mcp-client</module>
     </modules>
 </project>

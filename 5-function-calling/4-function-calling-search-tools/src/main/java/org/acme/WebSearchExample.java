@@ -22,7 +22,7 @@ public class WebSearchExample implements QuarkusApplication {
 
     @Override
     public int run(String... args) {
-        String question = "Was there a Java version released in 2024?";
+        String question = "Was there a Java version released in 2025?";
         var answerNoTools = assistant.chatNoTools(question);
         var answerWithTools = assistant.chat(question);
 
