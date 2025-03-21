@@ -74,7 +74,7 @@ public class PromptWithQuarkus implements QuarkusApplication {
         String ask(String prompt);
     }
 
-    @RegisterAiService(modelName = "prompt-b")
+    @RegisterAiService(modelName = "for-prompt-b")
     static interface PromptB {
         String ask(String prompt);
     }
