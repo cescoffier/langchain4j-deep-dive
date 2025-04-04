@@ -12,5 +12,8 @@ You need to set the `OPENAI_API_KEY` environment variable to the value of your O
 
 ## Running with local Ollama instead
 If you'd like to run with a local Ollama instance instead, first you need to ensure a local Ollama instance is running on port `11434` and the `llama3.2` model is pulled.
+* install ollama
+* `ollama serve`
+* (on another terminal) `ollama run llama3.2`
 
 Then you can replace step 1 above with `./mvnw clean quarkus:dev -Dquarkus.profile=ollama,dev`
