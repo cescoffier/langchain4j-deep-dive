@@ -23,6 +23,8 @@ public class MyHttpEndpoint {
     @POST
     @Path("/long")
     public String longMemory(String question) {
+        // id is hard coded 123 but should differentiate between say users
+        // maybe passing the user id
         return longMemoryAssistant.answer(123, question);
     }
 }
