@@ -29,14 +29,17 @@ public class ManualMemory implements QuarkusApplication {
 
         var response = model.chat(memory);
 
+        // What's my name
         System.out.println("Answer 1: " + response.aiMessage().text());
         memory.add(response.aiMessage());
 
+        // Asking again with the memory context
         memory.add(new UserMessage("What's my name again?"));
         response = model.chat(memory);
 
         System.out.println("Answer 2: " + response.aiMessage().text());
 
+        // New memory !
         var m = new UserMessage("What's my name again?");
 
         // Notice we didn't add the response or the new message to the memory
