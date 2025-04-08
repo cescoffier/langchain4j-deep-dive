@@ -18,6 +18,7 @@
         <module>6-guardrails</module>
         <module>7-images</module>
         <module>8-mcp</module>
+        <module>9-testing</module>
     </modules>
     <dependencyManagement>
         <dependencies>

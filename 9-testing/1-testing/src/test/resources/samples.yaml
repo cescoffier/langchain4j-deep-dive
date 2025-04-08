@@ -1,0 +1,880 @@
+- name: ExplanationofClimateChange1
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary2
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology3
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures4
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange5
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology6
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures7
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures8
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology9
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology10
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures11
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary12
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange13
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures14
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange15
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology16
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange17
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures18
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology19
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary20
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures21
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: OverviewofArtificialIntelligence22
+  parameters:
+  - Artificial Intelligence (AI) is the simulation of human intelligence processes
+    by machines, especially computer systems. These processes include learning, reasoning,
+    and self-correction. AI is widely used in various fields such as healthcare, finance,
+    and transportation.
+  expected-output: '- AI simulates human intelligence using machines.
+
+    - Key processes include learning, reasoning, and self-correction.
+
+    - Used in healthcare, finance, and transportation.
+
+    - Helps in automating complex tasks.
+
+    - Drives innovation in various industries.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary23
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: OverviewofArtificialIntelligence24
+  parameters:
+  - Artificial Intelligence (AI) is the simulation of human intelligence processes
+    by machines, especially computer systems. These processes include learning, reasoning,
+    and self-correction. AI is widely used in various fields such as healthcare, finance,
+    and transportation.
+  expected-output: '- AI simulates human intelligence using machines.
+
+    - Key processes include learning, reasoning, and self-correction.
+
+    - Used in healthcare, finance, and transportation.
+
+    - Helps in automating complex tasks.
+
+    - Drives innovation in various industries.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures25
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange26
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology27
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange28
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary29
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: OverviewofArtificialIntelligence30
+  parameters:
+  - Artificial Intelligence (AI) is the simulation of human intelligence processes
+    by machines, especially computer systems. These processes include learning, reasoning,
+    and self-correction. AI is widely used in various fields such as healthcare, finance,
+    and transportation.
+  expected-output: '- AI simulates human intelligence using machines.
+
+    - Key processes include learning, reasoning, and self-correction.
+
+    - Used in healthcare, finance, and transportation.
+
+    - Helps in automating complex tasks.
+
+    - Drives innovation in various industries.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures31
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology32
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology33
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange34
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: OverviewofArtificialIntelligence35
+  parameters:
+  - Artificial Intelligence (AI) is the simulation of human intelligence processes
+    by machines, especially computer systems. These processes include learning, reasoning,
+    and self-correction. AI is widely used in various fields such as healthcare, finance,
+    and transportation.
+  expected-output: '- AI simulates human intelligence using machines.
+
+    - Key processes include learning, reasoning, and self-correction.
+
+    - Used in healthcare, finance, and transportation.
+
+    - Helps in automating complex tasks.
+
+    - Drives innovation in various industries.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: OverviewofArtificialIntelligence36
+  parameters:
+  - Artificial Intelligence (AI) is the simulation of human intelligence processes
+    by machines, especially computer systems. These processes include learning, reasoning,
+    and self-correction. AI is widely used in various fields such as healthcare, finance,
+    and transportation.
+  expected-output: '- AI simulates human intelligence using machines.
+
+    - Key processes include learning, reasoning, and self-correction.
+
+    - Used in healthcare, finance, and transportation.
+
+    - Helps in automating complex tasks.
+
+    - Drives innovation in various industries.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: OverviewofArtificialIntelligence37
+  parameters:
+  - Artificial Intelligence (AI) is the simulation of human intelligence processes
+    by machines, especially computer systems. These processes include learning, reasoning,
+    and self-correction. AI is widely used in various fields such as healthcare, finance,
+    and transportation.
+  expected-output: '- AI simulates human intelligence using machines.
+
+    - Key processes include learning, reasoning, and self-correction.
+
+    - Used in healthcare, finance, and transportation.
+
+    - Helps in automating complex tasks.
+
+    - Drives innovation in various industries.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: OverviewofArtificialIntelligence38
+  parameters:
+  - Artificial Intelligence (AI) is the simulation of human intelligence processes
+    by machines, especially computer systems. These processes include learning, reasoning,
+    and self-correction. AI is widely used in various fields such as healthcare, finance,
+    and transportation.
+  expected-output: '- AI simulates human intelligence using machines.
+
+    - Key processes include learning, reasoning, and self-correction.
+
+    - Used in healthcare, finance, and transportation.
+
+    - Helps in automating complex tasks.
+
+    - Drives innovation in various industries.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures39
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange40
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary41
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange42
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange43
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary44
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: SummaryofQuarkusFeatures45
+  parameters:
+  - Quarkus is a Kubernetes-native Java stack tailored for OpenJDK HotSpot and GraalVM,
+    crafted from the best-of-breed Java libraries and standards. It optimizes Java
+    specifically for containers and enables it to become an effective platform for
+    serverless, cloud-native environments.
+  expected-output: '- Quarkus is a Kubernetes-native Java stack.
+
+    - It supports OpenJDK HotSpot and GraalVM.
+
+    - Built from top Java libraries and standards.
+
+    - Optimized for containers and serverless environments.
+
+    - Designed for cloud-native application development.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary46
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology47
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: PhotosynthesisProcessSummary48
+  parameters:
+  - The process of photosynthesis allows plants to convert sunlight into energy. This
+    process takes place in the chloroplasts of plant cells using chlorophyll. Water,
+    carbon dioxide, and sunlight are essential for this transformation.
+  expected-output: '- Photosynthesis converts sunlight into plant energy.
+
+    - Occurs in chloroplasts using chlorophyll.
+
+    - Requires water, carbon dioxide, and sunlight.
+
+    - Supports plant growth and oxygen release.
+
+    - Essential for life on Earth.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: UnderstandingBlockchainTechnology49
+  parameters:
+  - A blockchain is a decentralized ledger of all transactions across a peer-to-peer
+    network. Using this technology, participants can confirm transactions without
+    the need for a central certifying authority.
+  expected-output: '- Blockchain is a decentralized digital ledger.
+
+    - Records transactions across a peer-to-peer network.
+
+    - No central authority is required.
+
+    - Ensures transparency and security.
+
+    - Used in cryptocurrency and other sectors.'
+  tags:
+  - quarkus-eval
+  - summary
+- name: ExplanationofClimateChange50
+  parameters:
+  - Climate change refers to long-term shifts in temperatures and weather patterns.
+    These shifts may be natural, such as through variations in the solar cycle. But
+    since the 1800s, human activities have been the main driver, primarily due to
+    burning fossil fuels like coal, oil and gas.
+  expected-output: '- Climate change involves long-term temperature and weather shifts.
+
+    - It can occur naturally via solar cycle changes.
+
+    - Since the 1800s, humans are the main contributors.
+
+    - Burning fossil fuels is a major cause.
+
+    - It leads to global environmental impacts.'
+  tags:
+  - quarkus-eval
+  - summary
