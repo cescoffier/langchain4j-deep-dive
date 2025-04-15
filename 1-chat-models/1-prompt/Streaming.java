@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-beta1
+//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-beta3
 //DEPS org.slf4j:slf4j-simple:1.7.32
 //RUNTIME_OPTIONS -Dorg.slf4j.simpleLogger.defaultLogLevel=debug
 

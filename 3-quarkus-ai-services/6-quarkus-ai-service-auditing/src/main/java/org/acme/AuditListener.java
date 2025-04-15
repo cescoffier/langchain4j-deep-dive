@@ -42,7 +42,7 @@ public class AuditListener {
     Log.infof(
 			"Response from LLM received:\nsource: %s\nresponse: %s",
 	    e.sourceInfo(),
-	    e.response().content().text()
+      e.response().aiMessage().text()
     );
   }
 
