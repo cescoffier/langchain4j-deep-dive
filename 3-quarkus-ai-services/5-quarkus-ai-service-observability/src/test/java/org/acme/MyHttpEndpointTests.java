@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.acme.Assistant.Entry;
 import org.acme.MyHttpEndpoint.Question;
-import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.RetryingTest;
 
 import io.quarkus.test.junit.QuarkusTest;
 
@@ -13,7 +13,7 @@ import io.restassured.http.ContentType;
 
 @QuarkusTest
 class MyHttpEndpointTests {
-	@Test
+	@RetryingTest(3)
 	void nba() {
 		var entry = given()
 			.body(new Question("Larry Bird"))

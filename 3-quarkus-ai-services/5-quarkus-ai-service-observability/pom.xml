@@ -78,6 +78,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit-pioneer</groupId>
+            <artifactId>junit-pioneer</artifactId>
+            <version>2.3.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <scope>test</scope>

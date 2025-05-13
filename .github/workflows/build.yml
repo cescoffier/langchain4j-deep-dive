@@ -39,7 +39,7 @@ jobs:
             ollama pull llama3.2 && \
             ollama pull llava:7b && \
             ollama pull snowflake-arctic-embed && \
-            ollama pull qwen2.5-coder:latest && \
+            ollama pull qwen3:4b && \
             ollama ls"
 
       - name: Setup Java
