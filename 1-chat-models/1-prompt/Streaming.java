@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-beta3
+//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-rc1
 //DEPS org.slf4j:slf4j-simple:1.7.32
 //RUNTIME_OPTIONS -Dorg.slf4j.simpleLogger.defaultLogLevel=debug
 
@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
 
 import dev.langchain4j.model.chat.response.ChatResponse;
 import dev.langchain4j.model.chat.response.StreamingChatResponseHandler;
-import dev.langchain4j.model.chat.StreamingChatLanguageModel;
+import dev.langchain4j.model.chat.StreamingChatModel;
 import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
 
 class Streaming {
@@ -15,10 +15,10 @@ class Streaming {
     // --------------------------
     //  add streaming (to console)
     // --------------------------
-    //      - create a StreamingChatLanguageModel of type OpenAi
+    //      - create a StreamingChatModel of type OpenAi
     //      - write an answer to the console and observe how it is rendered token per token
     public static void main(String[] args) throws InterruptedException {
-        StreamingChatLanguageModel model = OpenAiStreamingChatModel.builder()
+        StreamingChatModel model = OpenAiStreamingChatModel.builder()
           .apiKey(System.getenv("OPENAI_API_KEY"))
           .modelName("gpt-4o")
           .build();

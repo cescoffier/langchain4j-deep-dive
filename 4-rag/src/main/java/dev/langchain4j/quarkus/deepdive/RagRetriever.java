@@ -1,8 +1,7 @@
 package dev.langchain4j.quarkus.deepdive;
 
-import dev.langchain4j.rag.content.aggregator.ReRankingContentAggregator;
-import dev.langchain4j.rag.query.router.LanguageModelQueryRouter;
-import dev.langchain4j.rag.query.transformer.CompressingQueryTransformer;
+import java.util.Map;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 
@@ -16,12 +15,11 @@ import dev.langchain4j.rag.content.aggregator.ContentAggregator;
 import dev.langchain4j.rag.content.retriever.ContentRetriever;
 import dev.langchain4j.rag.content.retriever.EmbeddingStoreContentRetriever;
 import dev.langchain4j.rag.content.retriever.WebSearchContentRetriever;
-import dev.langchain4j.rag.query.router.DefaultQueryRouter;
+import dev.langchain4j.rag.query.router.LanguageModelQueryRouter;
 import dev.langchain4j.rag.query.router.QueryRouter;
+import dev.langchain4j.rag.query.transformer.CompressingQueryTransformer;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.web.search.WebSearchEngine;
-
-import java.util.Map;
 
 public class RagRetriever {
 
@@ -62,18 +60,18 @@ public class RagRetriever {
     }
 
     private QueryRouter getQueryRouter(ChatLanguageModel chatLanguageModel, ContentRetriever embeddingStoreContentRetriever, ContentRetriever webSearchContentRetriever) {
-//      return LanguageModelQueryRouter.builder()
-//                                     .chatLanguageModel(chatLanguageModel)
-//                                     .fallbackStrategy(LanguageModelQueryRouter.FallbackStrategy.ROUTE_TO_ALL)
-//                                     .retrieverToDescription(
-//            Map.of(
-//              embeddingStoreContentRetriever, "Local documents",
-//              webSearchContentRetriever, "Search of quarkus.io"
-//            )
-//          )
-//                                     .build();
+      return LanguageModelQueryRouter.builder()
+                                     .chatLanguageModel(chatLanguageModel)
+                                     .fallbackStrategy(LanguageModelQueryRouter.FallbackStrategy.ROUTE_TO_ALL)
+                                     .retrieverToDescription(
+            Map.of(
+              embeddingStoreContentRetriever, "Local documents",
+              webSearchContentRetriever, "Search of quarkus.io"
+            )
+          )
+                                     .build();
 
-      return new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
+//      return new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
 //      return new DefaultQueryRouter(embeddingStoreContentRetriever);
     }
 
@@ -85,7 +83,7 @@ public class RagRetriever {
 //          .querySelector(ReRankingContentAggregator.DEFAULT_QUERY_SELECTOR)
 //          .minScore(0.6)
 //          .build();
-
+//
 //      return new CustomReRankingContentAggregator(scoringModel, 0.6);
     }
 }
