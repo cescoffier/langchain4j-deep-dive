@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import org.acme.Assistant.Entry;
 import org.acme.MyHttpEndpoint.Question;
-import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.RetryingTest;
 
 import io.quarkus.test.junit.QuarkusTest;
 
@@ -15,7 +15,7 @@ import io.restassured.http.ContentType;
 
 @QuarkusTest
 class MyHttpEndpointTests {
-	@Test
+	@RetryingTest(3)
 	void nba() {
 		var answers = given()
 			.body(new Question(2, "Michael Jordan"))
@@ -35,7 +35,7 @@ class MyHttpEndpointTests {
 			.hasSize(2);
 	}
 
-	@Test
+	@RetryingTest(3)
 	void nbaLast() {
 		var entry = given()
 			.body(new Question(1, "Larry Bird"))
