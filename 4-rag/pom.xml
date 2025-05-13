@@ -16,10 +16,10 @@
 
         <compiler-plugin.version>3.14.0</compiler-plugin.version>
 
-        <quarkus.platform.version>3.22.1</quarkus.platform.version>
+        <quarkus.platform.version>3.22.2</quarkus.platform.version>
         <quarkus-langchain4j.version>0.26.2</quarkus-langchain4j.version>
 
-        <langchain4j.version>1.0.0-beta1</langchain4j.version>
+        <langchain4j.version>1.0.0-beta4</langchain4j.version>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
     </properties>
 

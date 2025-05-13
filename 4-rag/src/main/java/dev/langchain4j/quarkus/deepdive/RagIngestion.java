@@ -13,6 +13,7 @@ import io.quarkus.runtime.StartupEvent;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
 import dev.langchain4j.data.document.splitter.DocumentSplitters;
 import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.model.openai.OpenAiChatModelName;
 import dev.langchain4j.model.openai.OpenAiTokenizer;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
@@ -36,11 +37,17 @@ public class RagIngestion {
         // cleanup the store to start fresh (just for demo purposes)
         embeddingStore.removeAll();
 
+        var documentSplitter = DocumentSplitters.recursive(
+            500,
+            50,
+            new OpenAiTokenizer(OpenAiChatModelName.GPT_4_O)
+        );
+
         // Ingest the documents
         EmbeddingStoreIngestor.builder()
                 .embeddingStore(embeddingStore)
                 .embeddingModel(embeddingModel)
-                .documentSplitter(DocumentSplitters.recursive(500, 50, new OpenAiTokenizer()))
+                .documentSplitter(documentSplitter)
                 .build()
                 .ingest(FileSystemDocumentLoader.loadDocumentsRecursively(documentsPath));
 
