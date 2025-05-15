@@ -1,6 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-rc1
-//DEPS org.slf4j:slf4j-simple:1.7.32
+//DEPS org.slf4j:slf4j-simple:2.0.17
 //RUNTIME_OPTIONS -Dorg.slf4j.simpleLogger.defaultLogLevel=debug
 
 import java.util.concurrent.CountDownLatch;
