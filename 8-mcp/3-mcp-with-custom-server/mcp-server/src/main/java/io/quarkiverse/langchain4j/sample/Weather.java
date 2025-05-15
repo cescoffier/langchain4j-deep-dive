@@ -52,6 +52,9 @@ public class Weather {
     }
 
     String formatAlerts(Alerts alerts) {
+        if (alerts.features() == null || alerts.features().isEmpty()) {
+            return "No alerts found";
+        }
         return alerts.features()
                 .stream()
                 .map(feature ->
