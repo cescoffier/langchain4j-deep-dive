@@ -1,5 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS dev.langchain4j:langchain4j-open-ai:1.0.0-rc1
+//DEPS org.slf4j:slf4j-simple:2.0.17
 
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
