@@ -16,7 +16,7 @@ import dev.langchain4j.mcp.client.McpClient;
 import dev.langchain4j.mcp.client.transport.McpTransport;
 import dev.langchain4j.mcp.client.transport.stdio.StdioMcpTransport;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.tool.ToolProvider;
@@ -27,7 +27,7 @@ public class Langchain4jMcpExternalServer implements QuarkusApplication {
     static final Path PLAYGROUND_DIR = Paths.get("playground").toAbsolutePath();
 
     @Inject
-    ChatLanguageModel model;
+    ChatModel model;
 
     @Override
     public int run(String... args) {
@@ -53,7 +53,7 @@ public class Langchain4jMcpExternalServer implements QuarkusApplication {
                 .build();
 
         Assistant assistant = AiServices.builder(Assistant.class)
-                .chatLanguageModel(model)
+                .chatModel(model)
                 .toolProvider(mcpToolProvider)
                 .chatMemory(memory)
                 .build();

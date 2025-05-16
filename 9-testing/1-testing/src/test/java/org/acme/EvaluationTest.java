@@ -1,6 +1,6 @@
 package org.acme;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import io.quarkiverse.langchain4j.scorer.junit5.AiScorer;
 import io.quarkiverse.langchain4j.scorer.junit5.SampleLocation;
 import io.quarkiverse.langchain4j.scorer.junit5.ScorerConfiguration;
@@ -28,7 +28,7 @@ public class EvaluationTest {
     SummarizationService service;
 
     @Inject
-    ChatLanguageModel judge;
+    ChatModel judge;
 
     @Test
     void evaluateUsingJudge(@ScorerConfiguration(concurrency = 5) Scorer scorer,

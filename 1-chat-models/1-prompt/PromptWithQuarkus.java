@@ -1,6 +1,6 @@
 //usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS io.quarkus.platform:quarkus-bom:3.21.2@pom
-//DEPS io.quarkiverse.langchain4j:quarkus-langchain4j-openai:0.26.2
+//DEPS io.quarkiverse.langchain4j:quarkus-langchain4j-openai:1.0.0.CR1
 //JAVAC_OPTIONS -parameters
 //JAVA_OPTIONS -Djava.util.logging.manager=org.jboss.logmanager.LogManager
 //FILES application.properties
@@ -16,7 +16,7 @@ import io.smallrye.mutiny.Multi;
 
 import java.util.concurrent.CountDownLatch;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 
 
 @QuarkusMain
@@ -24,9 +24,9 @@ public class PromptWithQuarkus implements QuarkusApplication {
     private final PromptA promptA;
     private final PromptB promptB;
     private final PromptC promptC;
-    private final ChatLanguageModel model;
+    private final ChatModel model;
 
-    public PromptWithQuarkus(PromptA promptA, PromptB promptB, PromptC promptC, ChatLanguageModel model) {
+    public PromptWithQuarkus(PromptA promptA, PromptB promptB, PromptC promptC, ChatModel model) {
         this.promptA = promptA;
         this.promptB = promptB;
         this.promptC = promptC;

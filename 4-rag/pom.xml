@@ -17,9 +17,9 @@
         <compiler-plugin.version>3.14.0</compiler-plugin.version>
 
         <quarkus.platform.version>3.22.3</quarkus.platform.version>
-        <quarkus-langchain4j.version>0.26.2</quarkus-langchain4j.version>
+        <quarkus-langchain4j.version>1.0.0.CR1</quarkus-langchain4j.version>
 
-        <langchain4j.version>1.0.0-beta4</langchain4j.version>
+        <langchain4j-embeddings.version>1.0.0-beta5</langchain4j-embeddings.version>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
     </properties>
 
@@ -52,12 +52,12 @@
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embeddings-bge-small-en-q</artifactId>
-            <version>${langchain4j.version}</version>
+            <version>${langchain4j-embeddings.version}</version>
         </dependency>
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-document-parser-apache-tika</artifactId>
-            <version>${langchain4j.version}</version>
+            <version>${langchain4j-embeddings.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>

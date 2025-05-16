@@ -8,14 +8,14 @@ import io.quarkus.runtime.annotations.QuarkusMain;
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.output.TokenUsage;
 
 @QuarkusMain
 public class Tokens implements QuarkusApplication {
 
     @Inject
-    ChatLanguageModel model;
+    ChatModel model;
 
     @Override
     public int run(String... args) {

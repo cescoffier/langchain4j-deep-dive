@@ -1,6 +1,6 @@
 package org.acme;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import jakarta.inject.Inject;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 public class AssertionTest {
 
     @Inject
-    ChatLanguageModel judge;
+    ChatModel judge;
 
     @Test
     void test() {
