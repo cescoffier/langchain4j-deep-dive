@@ -11,13 +11,13 @@ import io.quarkus.runtime.annotations.QuarkusMain;
 import dev.langchain4j.data.message.ChatMessage;
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 
 @QuarkusMain
 public class ManualMemory implements QuarkusApplication {
 
     @Inject
-    ChatLanguageModel model;
+    ChatModel model;
 
     @Override
     public int run(String... args) {

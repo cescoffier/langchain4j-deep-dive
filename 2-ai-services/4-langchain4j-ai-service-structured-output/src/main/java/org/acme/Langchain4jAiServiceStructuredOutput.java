@@ -5,7 +5,7 @@ import jakarta.inject.Inject;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
@@ -15,7 +15,7 @@ import dev.langchain4j.service.V;
 public class Langchain4jAiServiceStructuredOutput implements QuarkusApplication {
 
     @Inject
-    ChatLanguageModel model;
+    ChatModel model;
 
     @Override
     public int run(String... args) {
