@@ -1,5 +1,6 @@
 package org.acme;
 
+import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -44,6 +45,7 @@ public class Langchain4jMcpExternalServer implements QuarkusApplication {
             information about it on https://modelcontextprotocol.io/.
             """
         )
+        @McpToolBox
         String answer(String question);
     }
 }
