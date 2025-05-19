@@ -6,7 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 
 import dev.langchain4j.data.message.UserMessage;
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.model.scoring.ScoringModel;
 import dev.langchain4j.rag.DefaultRetrievalAugmentor;
@@ -28,7 +28,7 @@ public class RagRetriever {
     public RetrievalAugmentor create(
                   EmbeddingStore store,
                   EmbeddingModel model,
-                  ChatLanguageModel chatLanguageModel,
+                  ChatModel chatLanguageModel,
                   WebSearchEngine webSearchEngine,
                   ScoringModel scoringModel) {
 
@@ -46,8 +46,8 @@ public class RagRetriever {
                 .queryRouter(getQueryRouter(chatLanguageModel, embeddingStoreContentRetriever, webSearchContentRetriever))
                 .queryTransformer(new CompressingQueryTransformer(chatLanguageModel))
                 .contentAggregator(getContentAggregator(scoringModel))
-                .contentInjector((list, userMessage) -> {
-                    var prompt = new StringBuffer(userMessage.singleText());
+                .contentInjector((list, chatMessage) -> {
+                    var prompt = new StringBuilder((chatMessage instanceof UserMessage um) ? um.singleText() : "");
                     prompt.append("\n\nPlease, only use the following information:\n\n");
 
                     list.stream()
@@ -59,9 +59,9 @@ public class RagRetriever {
                 .build();
     }
 
-    private QueryRouter getQueryRouter(ChatLanguageModel chatLanguageModel, ContentRetriever embeddingStoreContentRetriever, ContentRetriever webSearchContentRetriever) {
+    private QueryRouter getQueryRouter(ChatModel chatLanguageModel, ContentRetriever embeddingStoreContentRetriever, ContentRetriever webSearchContentRetriever) {
       return LanguageModelQueryRouter.builder()
-                                     .chatLanguageModel(chatLanguageModel)
+                                     .chatModel(chatLanguageModel)
                                      .fallbackStrategy(LanguageModelQueryRouter.FallbackStrategy.ROUTE_TO_ALL)
                                      .retrieverToDescription(
             Map.of(

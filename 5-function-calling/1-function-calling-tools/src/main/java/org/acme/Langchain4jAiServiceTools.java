@@ -7,7 +7,7 @@ import io.quarkus.runtime.annotations.QuarkusMain;
 
 import dev.langchain4j.agent.tool.Tool;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.service.AiServices;
 
 
@@ -15,12 +15,12 @@ import dev.langchain4j.service.AiServices;
 public class Langchain4jAiServiceTools implements QuarkusApplication {
 
     @Inject
-    ChatLanguageModel model;
+    ChatModel model;
 
     @Override
     public int run(String... args) {
         Assistant assistant = AiServices.builder(Assistant.class)
-                .chatLanguageModel(model)
+                .chatModel(model)
                 .tools(new Calculator())
                 .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
                 .build();
