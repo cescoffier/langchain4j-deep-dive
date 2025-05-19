@@ -3,6 +3,7 @@ package io.quarkiverse.langchain4j.sample.chatbot;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
+import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
 
 @RegisterAiService
 public interface AiWeatherService {
@@ -18,5 +19,6 @@ public interface AiWeatherService {
             
             If you can get the US state, then you should also return any weather alerts for the location.
             """)
+    @McpToolBox
     String getWeather(String message);
 }
