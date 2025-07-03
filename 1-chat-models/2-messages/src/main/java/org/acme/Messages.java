@@ -19,8 +19,8 @@ public class Messages implements QuarkusApplication {
     public int run(String... args) {
         var system = new SystemMessage("You are Georgios, all your answers should be using the Java language using greek letters");
 //        system = new SystemMessage("""
-//                You are at JNation, all your responses should use the Java language
-//                with method names and variables in Portuguese.
+//                You are at RivieraDev, all your responses should use the Java language
+//                with method names and variables in French.
 //                Be sarcastic and pendantic on your method and variable names when possible
 //                and as long as it compiles.
 //                """);
