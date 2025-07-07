@@ -57,4 +57,8 @@ public class Tools implements QuarkusApplication {
             return Math.sqrt(x);
         }
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Tools.class, args);
+    }
 }

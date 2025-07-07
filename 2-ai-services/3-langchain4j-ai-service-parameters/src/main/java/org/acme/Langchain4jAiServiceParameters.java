@@ -31,4 +31,8 @@ public class Langchain4jAiServiceParameters implements QuarkusApplication {
         @UserMessage("Write a poem about {{topic}}. It should not be more than 5 lines long, and use the {{language}} language.")
         String answer(@V("topic") String topic, @V("language") String language);
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Langchain4jAiServiceParameters.class, args);
+    }
 }

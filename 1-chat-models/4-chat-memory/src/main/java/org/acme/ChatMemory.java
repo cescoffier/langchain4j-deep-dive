@@ -39,4 +39,8 @@ public class ChatMemory implements QuarkusApplication {
         return 0;
     }
 
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(ChatMemory.class, args);
+    }
+
 }

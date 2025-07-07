@@ -27,4 +27,8 @@ public class Langchain4jAiServiceMesssages implements QuarkusApplication {
         @SystemMessage("You are a Shakespeare, all your responses must be in iambic pentameter.")
         String answer(String question);
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Langchain4jAiServiceMesssages.class, args);
+    }
 }

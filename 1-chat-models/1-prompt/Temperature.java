@@ -23,8 +23,8 @@ class Temperature {
         ChatModel model = OpenAiChatModel.builder()
                 .apiKey(System.getenv("OPENAI_API_KEY"))
                 .modelName("gpt-4o")
-                .timeout(Duration.ofSeconds(30))
-                .temperature(0.5)
+                .timeout(Duration.ofSeconds(180))
+                .temperature(1.7)
                 .logRequests(true)
                 .logResponses(true)
                 .build();

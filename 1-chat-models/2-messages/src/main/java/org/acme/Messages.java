@@ -32,4 +32,8 @@ public class Messages implements QuarkusApplication {
         System.out.println("Answer: " + response.aiMessage().text());
         return 0;
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Messages.class, args);
+    }
 }

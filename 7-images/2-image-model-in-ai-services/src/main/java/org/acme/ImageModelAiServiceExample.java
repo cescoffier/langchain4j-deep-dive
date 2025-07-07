@@ -53,4 +53,8 @@ public class ImageModelAiServiceExample implements QuarkusApplication {
         @UserMessage("Describe the given image")
         String describe(@ImageUrl URI url);
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(ImageModelAiServiceExample.class, args);
+    }
 }

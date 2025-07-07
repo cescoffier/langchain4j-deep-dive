@@ -45,4 +45,8 @@ public class Langchain4jAiServiceStructuredOutput implements QuarkusApplication 
         Feedback triage(@V("feedback") String feedback);
     }
 
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Langchain4jAiServiceStructuredOutput.class, args);
+    }
+
 }

@@ -21,7 +21,6 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @QuarkusTest
 @AiScorer
-@Disabled
 public class EvaluationTest {
 
     @Inject

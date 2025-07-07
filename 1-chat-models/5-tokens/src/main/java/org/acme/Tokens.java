@@ -48,4 +48,8 @@ public class Tokens implements QuarkusApplication {
         return (tokenUsage.inputTokenCount() * (2.50 / 1_000_000)) +
           (tokenUsage.outputTokenCount() * (10.00 / 1_000_000));
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Tokens.class, args);
+    }
 }

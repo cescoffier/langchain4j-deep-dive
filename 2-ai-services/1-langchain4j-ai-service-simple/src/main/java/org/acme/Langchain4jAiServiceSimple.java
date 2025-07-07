@@ -26,4 +26,8 @@ public class Langchain4jAiServiceSimple implements QuarkusApplication {
     interface Assistant {
         String answer(String question);
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Langchain4jAiServiceSimple.class, args);
+    }
 }

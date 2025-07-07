@@ -42,4 +42,8 @@ public class Langchain4jAiServiceChatMemory implements QuarkusApplication {
         @SystemMessage("You are a very useful assistant. Your name is Roger.")
         String ask(String question);
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(Langchain4jAiServiceChatMemory.class, args);
+    }
 }

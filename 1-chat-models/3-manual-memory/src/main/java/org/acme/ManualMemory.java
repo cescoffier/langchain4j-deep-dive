@@ -49,4 +49,8 @@ public class ManualMemory implements QuarkusApplication {
         return 0;
     }
 
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(ManualMemory.class, args);
+    }
+
 }

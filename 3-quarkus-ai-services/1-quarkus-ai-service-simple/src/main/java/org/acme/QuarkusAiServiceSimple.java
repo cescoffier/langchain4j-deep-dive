@@ -26,4 +26,8 @@ public class QuarkusAiServiceSimple implements QuarkusApplication {
     interface Assistant {
         String answer(String question);
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(QuarkusAiServiceSimple.class, args);
+    }
 }

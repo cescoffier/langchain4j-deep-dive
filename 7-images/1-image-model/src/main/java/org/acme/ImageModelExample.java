@@ -22,4 +22,8 @@ public class ImageModelExample implements QuarkusApplication {
 
         return 0;
     }
+
+    public static void main(String[] args) {
+        io.quarkus.runtime.Quarkus.run(ImageModelExample.class, args);
+    }
 }
