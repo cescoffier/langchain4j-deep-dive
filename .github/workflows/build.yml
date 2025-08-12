@@ -31,7 +31,7 @@ jobs:
           - 11434:11434
         options: --name ollama --rm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Pull Ollama models
         run: |
