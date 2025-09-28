@@ -6,6 +6,7 @@ import io.quarkiverse.mailpit.test.WithMailbox;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.mockito.InjectSpy;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junitpioneer.jupiter.RetryingTest;
 
 import static io.restassured.RestAssured.get;
@@ -17,6 +18,7 @@ import static org.mockito.Mockito.verify;
 
 @QuarkusTest
 @WithMailbox
+@Disabled("The model used during the test does not call the function")
 class EmailMeAPoemResourceTests {
     @InjectSpy
     EmailService emailService;
