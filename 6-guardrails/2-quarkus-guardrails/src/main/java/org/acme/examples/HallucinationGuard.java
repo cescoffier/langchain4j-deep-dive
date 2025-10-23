@@ -8,12 +8,12 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import io.quarkus.logging.Log;
 
 import dev.langchain4j.data.embedding.Embedding;
+import dev.langchain4j.guardrail.OutputGuardrail;
+import dev.langchain4j.guardrail.OutputGuardrailRequest;
+import dev.langchain4j.guardrail.OutputGuardrailResult;
 import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.model.output.Response;
 import dev.langchain4j.rag.content.Content;
-import io.quarkiverse.langchain4j.guardrails.OutputGuardrail;
-import io.quarkiverse.langchain4j.guardrails.OutputGuardrailParams;
-import io.quarkiverse.langchain4j.guardrails.OutputGuardrailResult;
 
 @ApplicationScoped
 public class HallucinationGuard implements OutputGuardrail {
@@ -24,17 +24,17 @@ public class HallucinationGuard implements OutputGuardrail {
     double threshold;
 
     @Override
-    public OutputGuardrailResult validate(OutputGuardrailParams params) {
-        Response<Embedding> embeddingOfTheResponse = embedding.embed(params.responseFromLLM().text());
+    public OutputGuardrailResult validate(OutputGuardrailRequest request) {
+        Response<Embedding> embeddingOfTheResponse = embedding.embed(request.responseFromLLM().aiMessage().text());
 
-        if ((params.augmentationResult() == null) || params.augmentationResult().contents().isEmpty()) {
+        if ((request.requestParams().augmentationResult() == null) || request.requestParams().augmentationResult().contents().isEmpty()) {
             Log.info("No content to validate against");
             return success();
         }
 
         float[] vectorOfTheResponse = embeddingOfTheResponse.content().vector();
 
-        for (Content content : params.augmentationResult().contents()) {
+        for (Content content : request.requestParams().augmentationResult().contents()) {
             Response<Embedding> embeddingOfTheContent = embedding.embed(content.textSegment());
             float[] vectorOfTheContent = embeddingOfTheContent.content().vector();
             double distance = cosineDistance(vectorOfTheResponse, vectorOfTheContent);
