@@ -1,9 +1,11 @@
 package dev.langchain4j.quarkus.deepdive;
 
-import dev.langchain4j.service.SystemMessage;
-import io.quarkiverse.langchain4j.RegisterAiService;
-import io.quarkiverse.langchain4j.guardrails.InputGuardrails;
 import jakarta.enterprise.context.SessionScoped;
+
+import io.quarkiverse.langchain4j.RegisterAiService;
+
+import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.guardrail.InputGuardrails;
 
 @SessionScoped
 @RegisterAiService(tools = BookingRepository.class)

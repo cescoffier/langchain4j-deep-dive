@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS dev.langchain4j:langchain4j-open-ai:1.0.0
+//DEPS dev.langchain4j:langchain4j-open-ai:1.7.1
 //DEPS org.slf4j:slf4j-simple:2.0.17
 //RUNTIME_OPTIONS -Dorg.slf4j.simpleLogger.defaultLogLevel=debug
 
@@ -24,7 +24,7 @@ class Temperature {
                 .apiKey(System.getenv("OPENAI_API_KEY"))
                 .modelName("gpt-4o")
                 .timeout(Duration.ofSeconds(280))
-                .temperature(1)
+                .temperature(1.0)
 //                .temperature(1.6)
                 .logRequests(true)
                 .logResponses(true)

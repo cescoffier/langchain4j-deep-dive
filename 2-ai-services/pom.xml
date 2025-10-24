@@ -15,5 +15,6 @@
         <module>3-langchain4j-ai-service-parameters</module>
         <module>4-langchain4j-ai-service-structured-output</module>
         <module>5-langchain4j-ai-service-chat-memory</module>
+	      <module>6-langchain4j-ai-service-auditing</module>
     </modules>
 </project>
