@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <compiler-plugin.version>3.14.0</compiler-plugin.version>
+        <compiler-plugin.version>3.14.1</compiler-plugin.version>
 
         <quarkus.platform.version>3.28.5</quarkus.platform.version>
         <quarkus-langchain4j.version>1.3.1</quarkus-langchain4j.version>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embeddings-bge-small-en-q</artifactId>
-            <version>1.7.1-beta14</version>
+            <version>1.8.0-beta15</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
@@ -84,7 +84,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.27.5</version>
+            <version>3.27.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
