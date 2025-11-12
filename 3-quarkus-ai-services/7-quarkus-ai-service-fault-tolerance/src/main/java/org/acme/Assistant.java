@@ -2,7 +2,9 @@ package org.acme;
 
 import java.time.temporal.ChronoUnit;
 
+import org.eclipse.microprofile.faulttolerance.ExecutionContext;
 import org.eclipse.microprofile.faulttolerance.Fallback;
+import org.eclipse.microprofile.faulttolerance.FallbackHandler;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
 
@@ -22,12 +24,15 @@ interface Assistant {
     @Retry(maxRetries = 2)
     @Timeout(value = 1, unit = ChronoUnit.MINUTES)
     @RateLimit(value = 50, window = 1, windowUnit = ChronoUnit.MINUTES)
-    @Fallback(fallbackMethod = "fallback")
+    @Fallback(FallbackEntry.class)
     Entry ask(MyHttpEndpoint.Question question);
 
     record Entry(String team, String years) {}
 
-    default Entry fallback(MyHttpEndpoint.Question question) {
-        return new Entry("Unknown", "Unknown");
+    class FallbackEntry implements FallbackHandler<Entry> {
+        @Override
+        public Entry handle(ExecutionContext context) {
+            return new Entry("Unknown", "Unknown");
+        }
     }
 }
